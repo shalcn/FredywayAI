@@ -64,10 +64,11 @@
 }
 
 .footerLogo {
-    height: 50px;
-    width: auto;
+    height: auto;
+    width: 100%;
+    max-width: 280px;
     object-fit: contain;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 .footerBrand p {

@@ -37,7 +37,7 @@ export default function Facilitator() {
                         />
                         <div className={styles.imageBadge}>
                             <img
-                                src="/images/uploaded_image_4_1768389085172.jpg"
+                                src="/images/freddway_badge_new.png"
                                 alt="Freddway Logo"
                                 className={styles.badgeLogo}
                             />
