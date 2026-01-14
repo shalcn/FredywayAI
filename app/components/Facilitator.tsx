@@ -31,13 +31,13 @@ export default function Facilitator() {
                 >
                     <div className={styles.imageWrapper}>
                         <img
-                            src="/images/uploaded_image_2_1768389051108.jpg"
+                            src="/images/uploaded_image_2_1768389051108.PNG"
                             alt="Dr. Freddy Liong"
                             className={styles.facilitatorImage}
                         />
                         <div className={styles.imageBadge}>
                             <img
-                                src="/images/freddway_badge_new.png"
+                                src="/images/LOGO BUNDAR.PNG"
                                 alt="Freddway Logo"
                                 className={styles.badgeLogo}
                             />

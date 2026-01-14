@@ -25,7 +25,7 @@ export default function Navigation() {
         <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ''}`}>
             <div className={styles.container}>
                 <div className={styles.logo}>
-                    <img src="/images/uploaded_image_1_1768389051108.jpg" alt="Freddway Coaching Consulting" className={styles.logoImg} />
+                    <img src="/images/LOGO+TEXT.PNG" alt="Freddway Coaching Consulting" className={styles.logoImg} />
                 </div>
 
                 <div className={styles.navLinks}>

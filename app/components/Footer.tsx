@@ -24,7 +24,7 @@ export default function Footer() {
                 <div className="container">
                     <div className={styles.footerGrid}>
                         <div className={styles.footerBrand}>
-                            <img src="/images/freddway_logo_new.png" alt="Freddway Coaching Consulting" className={styles.footerLogo} />
+                            <img src="/images/LOGO+TEXT.PNG" alt="Freddway Coaching Consulting" className={styles.footerLogo} />
                             <p>25+ Tahun Mengembangkan Leader Indonesia</p>
                         </div>
 

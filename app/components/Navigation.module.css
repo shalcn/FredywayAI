@@ -20,19 +20,36 @@
     margin: 0 auto;
     padding: 0 2rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
-    height: 70px;
+    height: 80px;
 }
 
 .logo {
-    height: 45px;
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 80px;
+    width: 250px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    overflow: visible;
 }
 
 .logoImg {
     height: 100%;
     width: auto;
     object-fit: contain;
+    transform: scale(3.2);
+    transform-origin: left center;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+    transition: all 0.3s ease;
+}
+
+.scrolled .logoImg {
+    transform: scale(2.6);
 }
 
 .navLinks {
