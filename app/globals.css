@@ -1,42 +1,266 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  /* Freddway.com Balanced Color Palette - Navy + White + Gold */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f4f6f9;
+  /* Slightly cooler grey for premium feel */
+  --bg-navy: #1e3a5f;
+  --bg-navy-dark: #0f1729;
+  --bg-card: #ffffff;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+  --navy-dark: #0f1729;
+  --navy-main: #1e3a5f;
+  --navy-light: #2d4a7c;
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
+  --gold-dark: #b8860b;
+  --gold-main: #d4af37;
+  --gold-light: #f4d03f;
+  --gold-ultra-light: #fff9e6;
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --text-primary: #1a1a1a;
+  --text-secondary: #4a4a4a;
+  --text-muted: #6b7280;
+  --text-white: #ffffff;
+  --text-white-muted: rgba(255, 255, 255, 0.85);
+
+  --accent-primary: #6b5ae0;
+  --accent-secondary: #8b7ae6;
+  --accent-cyan: #06b6d4;
+  --accent-orange: #f59e0b;
+
+  --gradient-1: linear-gradient(135deg, #1e3a5f 0%, #2d4a7c 100%);
+  /* Sophisticated Navy Gradient */
+  --gradient-2: linear-gradient(135deg, #b8860b 0%, #d4af37 100%);
+  /* Gold Gradient */
+  --gradient-gold: linear-gradient(135deg, #b8860b 0%, #f4d03f 100%);
+  --gradient-navy: linear-gradient(135deg, #0f1729 0%, #2d4a7c 100%);
+  --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+
+  /* Border colors */
+  --border-light: #e5e7eb;
+  --border-gold: rgba(212, 175, 55, 0.4);
+  --border-white: rgba(255, 255, 255, 0.2);
+
+  /* Typography - Freddway.com uses Roboto */
+  --font-primary: var(--font-roboto), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-heading: var(--font-playfair), serif;
+  /* Playfair Display for premium headers */
+
+  /* Container */
+  --container-max-width: 1280px;
+  --section-padding: 6rem 2rem;
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
 }
 
 * {
-  box-sizing: border-box;
-  padding: 0;
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-a {
-  color: inherit;
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-primary);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.7;
+  /* Increased for readability */
+  overflow-x: hidden;
+}
+
+/* Container */
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  margin-bottom: 0.75rem;
+}
+
+p {
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  margin-bottom: 1rem;
+  color: var(--text-secondary);
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.85rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all var(--transition-normal);
   text-decoration: none;
+  text-align: center;
+  letter-spacing: 0.3px;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+.btn-primary {
+  background: var(--gold-main);
+  color: var(--bg-navy);
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.25);
+}
+
+.btn-primary:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(212, 175, 55, 0.35);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text-white);
+  border: 2px solid var(--text-white);
+}
+
+.btn-secondary:hover {
+  background: var(--text-white);
+  color: var(--bg-navy);
+  transform: translateY(-2px);
+}
+
+/* Cards */
+.card {
+  background: var(--bg-card);
+  border-radius: 16px;
+  padding: 2rem;
+  transition: all var(--transition-normal);
+  border: 1px solid var(--border-light);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  border-color: var(--border-gold);
+}
+
+/* Glassmorphism - adjusted for light theme */
+.glass {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Gradients */
+.gradient-text {
+  background: var(--gradient-gold);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Section Styling */
+section {
+  padding: var(--section-padding);
+  position: relative;
+}
+
+.section-white {
+  background: var(--bg-primary);
+}
+
+.section-cream {
+  background: var(--bg-secondary);
+}
+
+.section-navy {
+  background: var(--bg-navy);
+  color: var(--text-white);
+}
+
+.section-navy h1,
+.section-navy h2,
+.section-navy h3,
+.section-navy h4 {
+  color: var(--text-white);
+}
+
+.section-navy p {
+  color: var(--text-white-muted);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.floating {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  :root {
+    --section-padding: 3rem 1.5rem;
+  }
+
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  .btn {
+    padding: 0.875rem 2rem;
+    font-size: 1rem;
   }
 }

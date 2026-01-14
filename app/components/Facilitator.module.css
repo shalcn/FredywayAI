@@ -1,0 +1,151 @@
+.section {
+    padding: 6rem 2rem;
+    background: var(--bg-secondary);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.header h2 {
+    font-size: 2.5rem;
+}
+
+.facilitatorCard {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: var(--bg-card);
+    border: 2px solid var(--border-light);
+    border-radius: 24px;
+    padding: 4rem;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 3rem;
+    align-items: start;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.imageWrapper {
+    position: relative;
+}
+
+.facilitatorImage {
+    width: 100%;
+    border-radius: 16px;
+    border: 3px solid var(--gold-main);
+    box-shadow: 0 8px 30px rgba(212, 175, 55, 0.3);
+}
+
+.imageBadge {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    width: 100px;
+    height: 100px;
+    background: white;
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.badgeLogo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.content h3 {
+    font-size: 2rem;
+    color: var(--gold-main);
+    margin-bottom: 0.5rem;
+}
+
+.title {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    font-weight: 500;
+}
+
+.credentials {
+    margin-bottom: 3rem;
+}
+
+.credItem {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    align-items: flex-start;
+}
+
+.checkIcon {
+    color: var(--gold-main);
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.credItem span:last-child {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.quote {
+    background: var(--bg-navy);
+    /* Contrast element */
+    padding: 2.5rem;
+    border-radius: 16px;
+    border-left: 4px solid var(--gold-main);
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    margin-top: 1rem;
+}
+
+.quoteIcon {
+    position: absolute;
+    top: -20px;
+    left: 20px;
+    font-size: 5rem;
+    color: var(--gold-main);
+    opacity: 0.2;
+    font-family: serif;
+}
+
+.quote p {
+    font-size: 1.125rem;
+    font-style: italic;
+    color: var(--text-white-muted);
+    /* White text for navy background */
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.quoteAuthor {
+    font-size: 1rem;
+    color: var(--gold-main);
+    font-weight: 600;
+}
+
+@media (max-width: 968px) {
+    .facilitatorCard {
+        grid-template-columns: 1fr;
+        padding: 3rem 2rem;
+        gap: 2rem;
+    }
+
+    .imageWrapper {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding: 4rem 1.5rem;
+    }
+
+    .facilitatorCard {
+        padding: 2rem 1.5rem;
+    }
+}
