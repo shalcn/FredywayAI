@@ -12,13 +12,18 @@ export default function Introduction() {
     });
 
     return (
-        <section className={styles.section} ref={ref}>
+        <section className={styles.section} ref={ref} id="solution">
             <div className={styles.container}>
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={inView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.8 }}
                 >
+                    <div className={styles.questionWrapper}>
+                        <h3 className={styles.question}>Apakah Anda ingin tahu solusinya?</h3>
+                        <div className={styles.questionDivider}></div>
+                    </div>
+
                     <h2 className={styles.title}>Inilah Solusinya:</h2>
                     <p className={styles.description}>
                         <strong>Executive Strategic Leadership with AI</strong> adalah program praktis 2 hari yang dirancang khusus untuk <strong>EXECUTIVE</strong> yang ingin menggunakan AI sebagai <strong>ASSISTANT STRATEGIS</strong> — bukan untuk coding atau hal teknis, tapi untuk <strong>MENINGKATKAN KUALITAS KEPUTUSAN ANDA</strong> dalam waktu yang jauh lebih cepat.
