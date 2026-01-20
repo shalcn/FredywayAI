@@ -34,15 +34,15 @@ export default function Footer() {
                             <h4>Hubungi Kami</h4>
                             <div className={styles.contactItem}>
                                 <Phone size={20} />
-                                <span>WhatsApp: +62 812-3456-7890</span>
+                                <span>WhatsApp: Masukkan No WhatsApp Anda</span>
                             </div>
                             <div className={styles.contactItem}>
                                 <Mail size={20} />
-                                <span>Email: info@freddway.com</span>
+                                <span>Email: Masukkan Email Anda</span>
                             </div>
                             <div className={styles.contactItem}>
                                 <Globe size={20} />
-                                <span>Website: freddway.com</span>
+                                <span>Website: Masukkan Website Anda</span>
                             </div>
                         </div>
 
