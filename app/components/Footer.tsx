@@ -33,29 +33,41 @@ export default function Footer() {
                         <div className={styles.footerContact}>
                             <h4>Hubungi Kami</h4>
                             <div className={styles.contactItem}>
-                                <Phone />
-                                <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer">WhatsApp: +62 812-3456-7890</a>
+                                <Phone size={20} />
+                                <span>WhatsApp: +62 812-3456-7890</span>
                             </div>
                             <div className={styles.contactItem}>
-                                <Mail />
-                                <a href="mailto:info@freddway.com">Email: info@freddway.com</a>
+                                <Mail size={20} />
+                                <span>Email: info@freddway.com</span>
                             </div>
                             <div className={styles.contactItem}>
-                                <Globe />
-                                <a href="https://freddway.com" target="_blank" rel="noopener noreferrer">Website: freddway.com</a>
+                                <Globe size={20} />
+                                <span>Website: freddway.com</span>
                             </div>
                         </div>
 
                         <div className={styles.footerEvent}>
                             <h4>Detail Event</h4>
                             <div className={styles.eventDetail}>
-                                <strong><Calendar size={16} style={{ display: 'inline', marginRight: '4px', verticalAlign: 'text-bottom' }} /> Tanggal:</strong> 24 - 25 Februari 2026 (2 Hari Full)
+                                <span className={styles.label}>
+                                    <Calendar size={18} />
+                                    Tanggal:
+                                </span>
+                                <span className={styles.value}>24 - 25 Februari 2026 (2 Hari Full)</span>
                             </div>
                             <div className={styles.eventDetail}>
-                                <strong><MapPin size={16} style={{ display: 'inline', marginRight: '4px', verticalAlign: 'text-bottom' }} /> Lokasi:</strong> Hotel Grand Mercure, Kemayoran, Jakarta
+                                <span className={styles.label}>
+                                    <MapPin size={18} />
+                                    Lokasi:
+                                </span>
+                                <span className={styles.value}>Hotel Grand Mercure, Kemayoran, Jakarta</span>
                             </div>
                             <div className={styles.eventDetail}>
-                                <strong><Clock size={16} style={{ display: 'inline', marginRight: '4px', verticalAlign: 'text-bottom' }} /> Waktu:</strong> 09:00 - 16:00 WIB (Termasuk Coffee Break & Lunch)
+                                <span className={styles.label}>
+                                    <Clock size={18} />
+                                    Waktu:
+                                </span>
+                                <span className={styles.value}>09:00 - 16:00 WIB (Termasuk Coffee Break & Lunch)</span>
                             </div>
                         </div>
                     </div>

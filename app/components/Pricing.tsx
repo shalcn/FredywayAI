@@ -1,11 +1,12 @@
-'use client';
-
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import styles from './Pricing.module.css';
 import { CheckCircle2, Clock, Zap, Gem } from 'lucide-react';
+import RegisterModal from './RegisterModal';
 
 export default function Pricing() {
+    const [isModalOpen, setIsModalOpen] = useState(false);
     const [ref, inView] = useInView({
         triggerOnce: true,
         threshold: 0.1,
@@ -66,13 +67,13 @@ export default function Pricing() {
                             border: 'none',
                             color: '#1a1a1a',
                             fontWeight: '700'
-                        }} onClick={() => {
-                            document.getElementById('register')?.scrollIntoView({ behavior: 'smooth' });
-                        }}>
+                        }} onClick={() => setIsModalOpen(true)}>
                             Daftar Sekarang
                         </button>
                     </motion.div>
                 </div>
+
+                <RegisterModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
 
                 <motion.div
                     className={styles.includes}

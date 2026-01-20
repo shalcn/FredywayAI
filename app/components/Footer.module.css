@@ -87,37 +87,48 @@
 
 .contactItem {
     display: flex;
-    gap: 0.75rem;
-    margin-bottom: 1rem;
-    color: var(--text-secondary);
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 1.25rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
 }
 
 .contactItem svg {
-    width: 20px;
-    height: 20px;
     color: var(--gold-main);
-    /* Ensure visibility */
+    flex-shrink: 0;
+}
+
+.footerEvent {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
 }
 
 .eventDetail {
-    margin-bottom: 1.25rem;
-    color: var(--text-secondary);
-    line-height: 1.6;
     display: flex;
-    gap: 0.75rem;
-    align-items: flex-start;
+    gap: 1rem;
+    line-height: 1.6;
 }
 
-.eventDetail svg {
+.label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
     color: var(--gold-main);
-    flex-shrink: 0;
-    margin-top: 4px;
+    font-weight: 700;
+    white-space: nowrap;
+    min-width: 100px;
 }
 
-.eventDetail strong {
-    color: var(--text-primary);
-    display: block;
-    margin-bottom: 0.25rem;
+.value {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+@media (max-width: 768px) {
+    .label {
+        min-width: 90px;
+    }
 }
 
 .copyright {
