@@ -1,5 +1,5 @@
 .footer {
-    background: var(--bg-navy-dark);
+    background: var(--bg-primary);
 }
 
 .cta {
@@ -48,7 +48,8 @@
 
 .footerMain {
     padding: 4rem 2rem;
-    background: var(--bg-navy-dark);
+    background: var(--bg-primary);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .footerGrid {
@@ -90,7 +91,7 @@
     align-items: center;
     gap: 12px;
     margin-bottom: 1.25rem;
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--text-secondary);
     font-size: 1rem;
 }
 
@@ -122,7 +123,7 @@
 }
 
 .value {
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--text-secondary);
 }
 
 @media (max-width: 768px) {
