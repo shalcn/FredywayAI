@@ -3,11 +3,12 @@
 }
 
 .cta {
-    background: var(--bg-navy-dark);
+    background: var(--bg-primary);
     padding: 6rem 2rem;
     text-align: center;
     position: relative;
     overflow: hidden;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .cta::before {
@@ -23,7 +24,7 @@
 .cta h2 {
     font-size: clamp(2rem, 4vw, 3rem);
     margin-bottom: 0.5rem;
-    color: white;
+    color: var(--navy-dark);
 }
 
 .cta h3 {
