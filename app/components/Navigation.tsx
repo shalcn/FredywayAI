@@ -42,7 +42,7 @@ export default function Navigation() {
                     <button onClick={() => { scrollToSection('benefits'); setIsMenuOpen(false); }} className={styles.navLink}>Manfaat</button>
                     <button onClick={() => { scrollToSection('facilitator'); setIsMenuOpen(false); }} className={styles.navLink}>Fasilitator</button>
                     <button onClick={() => { scrollToSection('pricing'); setIsMenuOpen(false); }} className={styles.navLink}>Investasi</button>
-                    <button onClick={() => { scrollToSection('register'); setIsMenuOpen(false); }} className={styles.btnRegister}>
+                    <button onClick={() => { scrollToSection('pricing'); setIsMenuOpen(false); }} className={styles.btnRegister}>
                         Daftar Sekarang
                     </button>
                 </div>
