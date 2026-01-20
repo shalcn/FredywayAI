@@ -25,10 +25,10 @@ export default function Home() {
       <FourPillars />
       <Benefits />
       <Facilitator />
+      <Gallery />
       <Pricing />
       <EventDetails />
       <FAQ />
-      <Gallery />
       <Footer />
     </main>
   );
