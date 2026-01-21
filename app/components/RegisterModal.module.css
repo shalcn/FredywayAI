@@ -22,6 +22,9 @@
     padding: 3rem;
     position: relative;
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    max-height: 90vh;
+    overflow-y: auto;
+    scrollbar-width: thin;
 }
 
 .closeBtn {
@@ -155,6 +158,11 @@
 
 @media (max-width: 480px) {
     .modal {
-        padding: 2rem 1.5rem;
+        padding: 1.5rem 1rem;
+        max-height: 85vh;
+    }
+
+    .header h2 {
+        font-size: 1.5rem;
     }
 }
