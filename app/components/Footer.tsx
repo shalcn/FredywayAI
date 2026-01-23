@@ -1,9 +1,29 @@
 'use client';
 
 import styles from './Footer.module.css';
+import { useState, useEffect } from 'react';
 import { Phone, Mail, Globe, Calendar, MapPin, Clock, AlertTriangle } from 'lucide-react';
 
 export default function Footer() {
+    const [eventData, setEventData] = useState({
+        date: '24 - 25 Februari 2026 (2 Hari Full)',
+        time: '09:00 - 16:00 WIB (Termasuk Coffee Break & Lunch)',
+        location: 'Hotel Grand Mercure, Kemayoran, Jakarta'
+    });
+
+    useEffect(() => {
+        fetch('/api/landing-data')
+            .then(res => res.json())
+            .then(data => {
+                if (data.date) setEventData({
+                    date: `${data.date}`, // Keep original formatting if needed or just use raw data
+                    time: `${data.time}`,
+                    location: data.location
+                });
+            })
+            .catch(err => console.error('Failed to load event data', err));
+    }, []);
+
     return (
         <footer className={styles.footer} id="register">
             <div className={styles.cta}>
@@ -34,7 +54,7 @@ export default function Footer() {
                             <h4>Hubungi Kami</h4>
                             <div className={styles.contactItem}>
                                 <Phone size={20} />
-                                <span>WhatsApp: Masukkan No WhatsApp Anda</span>
+                                <span>WhatsApp: Kak Andersen (+62 877-7573-0572)</span>
                             </div>
                             <div className={styles.contactItem}>
                                 <Mail size={20} />
@@ -42,7 +62,7 @@ export default function Footer() {
                             </div>
                             <div className={styles.contactItem}>
                                 <Globe size={20} />
-                                <span>Website: Masukkan Website Anda</span>
+                                <span>Website: freddway.com</span>
                             </div>
                         </div>
 
@@ -53,21 +73,21 @@ export default function Footer() {
                                     <Calendar size={18} />
                                     Tanggal:
                                 </span>
-                                <span className={styles.value}>24 - 25 Februari 2026 (2 Hari Full)</span>
+                                <span className={styles.value}>{eventData.date}</span>
                             </div>
                             <div className={styles.eventDetail}>
                                 <span className={styles.label}>
                                     <MapPin size={18} />
                                     Lokasi:
                                 </span>
-                                <span className={styles.value}>Hotel Grand Mercure, Kemayoran, Jakarta</span>
+                                <span className={styles.value}>{eventData.location}</span>
                             </div>
                             <div className={styles.eventDetail}>
                                 <span className={styles.label}>
                                     <Clock size={18} />
                                     Waktu:
                                 </span>
-                                <span className={styles.value}>09:00 - 16:00 WIB (Termasuk Coffee Break & Lunch)</span>
+                                <span className={styles.value}>{eventData.time}</span>
                             </div>
                         </div>
                     </div>

@@ -68,7 +68,7 @@ export default function FourPillars() {
                     transition={{ duration: 0.8 }}
                 >
                     <span className={styles.tagline}>FITUR & VALUE YANG DIDAPAT</span>
-                    <h2>Kuasai AI untuk <span className="gradient-text">4 Pilar Kepemimpinan Eksekutif</span></h2>
+                    <h2>Kuasai AI untuk <span className="gradient-text">4 Skill Kepemimpinan Eksekutif</span></h2>
                 </motion.div>
 
                 <div className={styles.pillarsContainer}>

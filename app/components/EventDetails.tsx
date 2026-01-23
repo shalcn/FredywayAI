@@ -2,10 +2,26 @@
 
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { useState, useEffect } from 'react';
 import styles from './EventDetails.module.css';
 import { Calendar, MapPin, Clock, AlertTriangle, Sparkles } from 'lucide-react';
 
 export default function EventDetails() {
+    const [eventData, setEventData] = useState({
+        date: '24 - 25 Februari 2026',
+        time: '09:00 - 16:00 WIB',
+        location: 'Hotel Grand Mercure, Kemayoran, Jakarta'
+    });
+
+    useEffect(() => {
+        fetch('/api/landing-data')
+            .then(res => res.json())
+            .then(data => {
+                if (data.date) setEventData(data);
+            })
+            .catch(err => console.error('Failed to load event data', err));
+    }, []);
+
     const [ref, inView] = useInView({
         triggerOnce: true,
         threshold: 0.1,
@@ -38,21 +54,21 @@ export default function EventDetails() {
                         <Calendar className={styles.icon} />
                         <div>
                             <div className={styles.infoLabel}>Tanggal</div>
-                            <div className={styles.infoValue}>24-25 Februari 2026</div>
+                            <div className={styles.infoValue}>{eventData.date}</div>
                         </div>
                     </div>
                     <div className={styles.infoCard}>
                         <MapPin className={styles.icon} />
                         <div>
                             <div className={styles.infoLabel}>Lokasi</div>
-                            <div className={styles.infoValue}>Grand Mercure, Jakarta</div>
+                            <div className={styles.infoValue}>{eventData.location}</div>
                         </div>
                     </div>
                     <div className={styles.infoCard}>
                         <Clock className={styles.icon} />
                         <div>
                             <div className={styles.infoLabel}>Waktu</div>
-                            <div className={styles.infoValue}>09:00 - 16:00 WIB</div>
+                            <div className={styles.infoValue}>{eventData.time}</div>
                         </div>
                     </div>
                 </motion.div>

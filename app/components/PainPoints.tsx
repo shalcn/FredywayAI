@@ -55,7 +55,7 @@ export default function PainPoints() {
                 >
                     <span className={styles.tagline}>WAJIB ANDA TAHU</span>
                     <h2>Tahukah Anda Kenapa Leader Sering Merasa <span className="gradient-text">Kewalahan?</span></h2>
-                    <p>Mungkin salah satu tantangan di bawah ini sedang Anda hadapi sekarang</p>
+
                 </motion.div>
 
                 <div className={styles.grid}>

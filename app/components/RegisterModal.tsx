@@ -22,8 +22,14 @@ export default function RegisterModal({ isOpen, onClose }: RegisterModalProps) {
         e.preventDefault();
         setIsSubmitting(true);
 
-        // Simulate API call
-        await new Promise(resolve => setTimeout(resolve, 1500));
+        // Simulate API call and redirect
+        await new Promise(resolve => setTimeout(resolve, 1000));
+
+        // Encode message
+        const message = `Halo Admin, saya ${formData.name}. Saya ingin mendaftar program Executive Strategic Leadership with AI`;
+        const waLink = `https://wa.me/6285813915353?text=${encodeURIComponent(message)}`;
+
+        window.open(waLink, '_blank');
 
         setIsSubmitting(false);
         setIsSuccess(true);
