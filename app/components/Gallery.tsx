@@ -21,15 +21,7 @@ export default function Gallery() {
     return (
         <section className={styles.section} ref={ref}>
             <div className="container">
-                <motion.div
-                    className={styles.header}
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={inView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 0.8 }}
-                >
-                    <h2>Cerita Nyata dari Alumni Kami</h2>
-                    <p>Lihat pengalaman dan transformasi para leader setelah mengikuti program ini</p>
-                </motion.div>
+
 
                 <div className={styles.grid}>
                     {galleryImages.map((image, index) => (
