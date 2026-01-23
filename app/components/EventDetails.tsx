@@ -5,6 +5,8 @@ import { useInView } from 'react-intersection-observer';
 import { useState, useEffect } from 'react';
 import styles from './EventDetails.module.css';
 import { Calendar, MapPin, Clock, AlertTriangle, Sparkles } from 'lucide-react';
+import { landingDataRef } from '@/lib/firebase';
+import { onValue } from 'firebase/database';
 
 export default function EventDetails() {
     const [eventData, setEventData] = useState({
@@ -14,12 +16,18 @@ export default function EventDetails() {
     });
 
     useEffect(() => {
-        fetch('/api/landing-data')
-            .then(res => res.json())
-            .then(data => {
-                if (data.date) setEventData(data);
-            })
-            .catch(err => console.error('Failed to load event data', err));
+        // Set up real-time listener
+        const unsubscribe = onValue(landingDataRef, (snapshot) => {
+            if (snapshot.exists()) {
+                const data = snapshot.val();
+                setEventData(data);
+            }
+        }, (error) => {
+            console.error('Failed to load event data via real-time listener', error);
+        });
+
+        // Clean up listener on unmount
+        return () => unsubscribe();
     }, []);
 
     const [ref, inView] = useInView({
