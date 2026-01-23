@@ -6,7 +6,11 @@ import { get, set } from 'firebase/database';
 const defaultData = {
     date: "24 - 25 Februari 2026",
     time: "09:00 - 16:00 WIB",
-    location: "Hotel Grand Mercure, Kemayoran, Jakarta"
+    location: "Hotel Grand Mercure, Kemayoran, Jakarta",
+    earlyBirdDate: "1 Februari 2026",
+    ebHeader: "EARLY BIRD BERAKHIR 1 FEBRUARI 2026!",
+    ebNormalCard: "Untuk pendaftaran setelah 1 Februari 2026",
+    ebEBCard: "Bayar Sebelum 1 Februari 2026"
 };
 
 // GET: Read data from Firebase

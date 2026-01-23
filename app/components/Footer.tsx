@@ -3,25 +3,32 @@
 import styles from './Footer.module.css';
 import { useState, useEffect } from 'react';
 import { Phone, Mail, Globe, Calendar, MapPin, Clock, AlertTriangle } from 'lucide-react';
+import { landingDataRef } from '@/lib/firebase';
+import { onValue } from 'firebase/database';
 
 export default function Footer() {
     const [eventData, setEventData] = useState({
-        date: '24 - 25 Februari 2026 (2 Hari Full)',
-        time: '09:00 - 16:00 WIB (Termasuk Coffee Break & Lunch)',
-        location: 'Hotel Grand Mercure, Kemayoran, Jakarta'
+        date: '24 - 25 Februari 2026',
+        time: '09:00 - 16:00 WIB',
+        location: 'Hotel Grand Mercure, Kemayoran, Jakarta',
+        earlyBirdDate: '1 Februari 2026'
     });
 
     useEffect(() => {
-        fetch('/api/landing-data')
-            .then(res => res.json())
-            .then(data => {
-                if (data.date) setEventData({
-                    date: `${data.date}`, // Keep original formatting if needed or just use raw data
-                    time: `${data.time}`,
-                    location: data.location
+        // Set up real-time listener
+        const unsubscribe = onValue(landingDataRef, (snapshot) => {
+            if (snapshot.exists()) {
+                const data = snapshot.val();
+                setEventData({
+                    date: data.date || '24 - 25 Februari 2026',
+                    time: data.time || '09:00 - 16:00 WIB',
+                    location: data.location || 'Hotel Grand Mercure, Kemayoran, Jakarta',
+                    earlyBirdDate: data.earlyBirdDate || '1 Februari 2026'
                 });
-            })
-            .catch(err => console.error('Failed to load event data', err));
+            }
+        });
+
+        return () => unsubscribe();
     }, []);
 
     return (
@@ -37,7 +44,7 @@ export default function Footer() {
                     </button>
                     <p className={styles.warning}>
                         <AlertTriangle size={20} style={{ display: 'inline', marginRight: '8px', verticalAlign: 'text-bottom' }} /> <strong>PERHATIAN:</strong> Kuota terbatas hanya untuk 30 peserta karena kami ingin memastikan setiap peserta mendapat perhatian maksimal dan bisa praktik langsung.
-                        <br />Early Bird berakhir 1 Februari 2026. Setelah itu harga naik Rp 1.5 Juta.
+                        <br />Early Bird berakhir {eventData.earlyBirdDate}. Setelah itu harga naik Rp 1.5 Juta.
                     </p>
                 </div>
             </div>

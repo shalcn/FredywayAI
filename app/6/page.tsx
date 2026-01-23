@@ -12,7 +12,11 @@ export default function AdminPage() {
     const [formData, setFormData] = useState({
         date: '',
         time: '',
-        location: ''
+        location: '',
+        earlyBirdDate: '',
+        ebHeader: '',
+        ebNormalCard: '',
+        ebEBCard: ''
     });
     const [isLoading, setIsLoading] = useState(true);
     const [isSaving, setIsSaving] = useState(false);
@@ -31,7 +35,15 @@ export default function AdminPage() {
         fetch('/api/landing-data')
             .then(res => res.json())
             .then(data => {
-                setFormData(data);
+                setFormData({
+                    date: data.date || '',
+                    time: data.time || '',
+                    location: data.location || '',
+                    earlyBirdDate: data.earlyBirdDate || '1 Februari 2026',
+                    ebHeader: data.ebHeader || 'EARLY BIRD BERAKHIR 1 FEBRUARI 2026!',
+                    ebNormalCard: data.ebNormalCard || 'Untuk pendaftaran setelah 1 Februari 2026',
+                    ebEBCard: data.ebEBCard || 'Bayar Sebelum 1 Februari 2026'
+                });
                 setIsLoading(false);
             })
             .catch(err => {
@@ -162,6 +174,50 @@ export default function AdminPage() {
                                     rows={3}
                                     className={styles.textarea}
                                     placeholder="Alamat lengkap lokasi event"
+                                />
+                            </div>
+
+                            <div className={styles.formGroup}>
+                                <label className={styles.label}>Batas Early Bird (Header Pricing)</label>
+                                <input
+                                    type="text"
+                                    value={formData.ebHeader}
+                                    onChange={e => setFormData({ ...formData, ebHeader: e.target.value })}
+                                    className={styles.input}
+                                    placeholder="Contoh: EARLY BIRD BERAKHIR 1 FEBRUARI 2026!"
+                                />
+                            </div>
+
+                            <div className={styles.formGroup}>
+                                <label className={styles.label}>Batas Early Bird (Kartu Harga Normal)</label>
+                                <input
+                                    type="text"
+                                    value={formData.ebNormalCard}
+                                    onChange={e => setFormData({ ...formData, ebNormalCard: e.target.value })}
+                                    className={styles.input}
+                                    placeholder="Contoh: Untuk pendaftaran setelah 1 Februari 2026"
+                                />
+                            </div>
+
+                            <div className={styles.formGroup}>
+                                <label className={styles.label}>Batas Early Bird (Kartu Harga Early Bird)</label>
+                                <input
+                                    type="text"
+                                    value={formData.ebEBCard}
+                                    onChange={e => setFormData({ ...formData, ebEBCard: e.target.value })}
+                                    className={styles.input}
+                                    placeholder="Contoh: Bayar Sebelum 1 Februari 2026"
+                                />
+                            </div>
+
+                            <div className={styles.formGroup}>
+                                <label className={styles.label}>Batas Early Bird (General/Footer)</label>
+                                <input
+                                    type="text"
+                                    value={formData.earlyBirdDate}
+                                    onChange={e => setFormData({ ...formData, earlyBirdDate: e.target.value })}
+                                    className={styles.input}
+                                    placeholder="Contoh: 1 Februari 2026"
                                 />
                             </div>
 

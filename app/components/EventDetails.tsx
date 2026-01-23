@@ -12,7 +12,8 @@ export default function EventDetails() {
     const [eventData, setEventData] = useState({
         date: '24 - 25 Februari 2026',
         time: '09:00 - 16:00 WIB',
-        location: 'Hotel Grand Mercure, Kemayoran, Jakarta'
+        location: 'Hotel Grand Mercure, Kemayoran, Jakarta',
+        earlyBirdDate: '1 Februari 2026'
     });
 
     useEffect(() => {
@@ -88,7 +89,7 @@ export default function EventDetails() {
                     transition={{ duration: 0.8, delay: 0.4 }}
                 >
                     <AlertTriangle size={20} />
-                    <span><strong>Early Bird berakhir 1 Februari 2026</strong> • Kuota terbatas 30 peserta</span>
+                    <span><strong>Early Bird berakhir {eventData.earlyBirdDate || '1 Februari 2026'}</strong> • Kuota terbatas 30 peserta</span>
                 </motion.div>
 
                 <motion.div

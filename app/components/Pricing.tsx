@@ -1,18 +1,44 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import styles from './Pricing.module.css';
 import { CheckCircle2, Clock, Zap, Gem } from 'lucide-react';
 import RegisterModal from './RegisterModal';
+import { landingDataRef } from '@/lib/firebase';
+import { onValue } from 'firebase/database';
 
 export default function Pricing() {
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [eventData, setEventData] = useState({
+        earlyBirdDate: '1 Februari 2026',
+        ebHeader: 'EARLY BIRD BERAKHIR 1 FEBRUARI 2026!',
+        ebNormalCard: 'Untuk pendaftaran setelah 1 Februari 2026',
+        ebEBCard: 'Bayar Sebelum 1 Februari 2026'
+    });
+
     const [ref, inView] = useInView({
         triggerOnce: true,
         threshold: 0.1,
     });
+
+    useEffect(() => {
+        // Set up real-time listener
+        const unsubscribe = onValue(landingDataRef, (snapshot) => {
+            if (snapshot.exists()) {
+                const data = snapshot.val();
+                setEventData({
+                    earlyBirdDate: data.earlyBirdDate || '1 Februari 2026',
+                    ebHeader: data.ebHeader || 'EARLY BIRD BERAKHIR 1 FEBRUARI 2026!',
+                    ebNormalCard: data.ebNormalCard || 'Untuk pendaftaran setelah 1 Februari 2026',
+                    ebEBCard: data.ebEBCard || 'Bayar Sebelum 1 Februari 2026'
+                });
+            }
+        });
+
+        return () => unsubscribe();
+    }, []);
 
     return (
         <section className={styles.section} ref={ref} id="pricing">
@@ -25,7 +51,7 @@ export default function Pricing() {
                 >
                     <h2>Investasi untuk Masa Depan Kepemimpinan Anda</h2>
                     <p className={styles.urgency}>
-                        <Clock size={20} style={{ display: 'inline', marginRight: '8px', verticalAlign: 'text-bottom' }} /> <strong>EARLY BIRD BERAKHIR 1 FEBRUARI 2026!</strong> Daftar sekarang dan hemat Rp 1.5 Juta. Kuota terbatas 30 peserta.
+                        <Clock size={20} style={{ display: 'inline', marginRight: '8px', verticalAlign: 'text-bottom' }} /> <strong>{eventData.ebHeader.toUpperCase()}</strong> Daftar sekarang dan hemat Rp 1.5 Juta. Kuota terbatas 30 peserta.
                     </p>
                 </motion.div>
 
@@ -38,7 +64,7 @@ export default function Pricing() {
                     >
                         <div className={styles.cardHeader}>
                             <h3>HARGA NORMAL</h3>
-                            <p className={styles.cardSubtitle}>Untuk pendaftaran setelah 1 Februari 2026</p>
+                            <p className={styles.cardSubtitle}>{eventData.ebNormalCard}</p>
                         </div>
                         <div className={styles.price}>
                             <span className={styles.currency}>Rp</span>
@@ -54,9 +80,10 @@ export default function Pricing() {
                     >
                         <div className={styles.badge} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                             <Zap size={16} fill="currentColor" /> EARLY BIRD - HEMAT 25%
-                        </div>                        <div className={styles.cardHeader}>
+                        </div>
+                        <div className={styles.cardHeader}>
                             <h3>EARLY BIRD</h3>
-                            <p className={styles.cardSubtitle}>Bayar Sebelum 1 Februari 2026<br />Hemat Rp 1.500.000!</p>
+                            <p className={styles.cardSubtitle}>{eventData.ebEBCard}<br />Hemat Rp 1.500.000!</p>
                         </div>
                         <div className={styles.price}>
                             <span className={styles.currency}>Rp</span>
@@ -86,7 +113,8 @@ export default function Pricing() {
                     <h3>
                         <CheckCircle2 size={28} style={{ display: 'inline', marginRight: '12px', verticalAlign: 'middle', color: 'var(--gold-main)' }} />
                         Yang Anda Dapatkan:
-                    </h3>                    <div className={styles.includesList}>
+                    </h3>
+                    <div className={styles.includesList}>
                         <div className={styles.includeItem}>
                             <CheckCircle2 />
                             <span>2 Hari Training Intensif (09:00-16:00)</span>
@@ -118,7 +146,8 @@ export default function Pricing() {
                 >
                     <h3 style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '12px' }}>
                         <Gem size={28} color="var(--gold-main)" /> Jaminan Kepuasan 100%
-                    </h3>                    <p>
+                    </h3>
+                    <p>
                         Jika setelah Hari Pertama Anda merasa program ini tidak sesuai ekspektasi, Anda bisa meminta <strong>FULL REFUND</strong> tanpa pertanyaan apapun.
                         <br />Kami yakin Anda akan mendapatkan value yang jauh melebihi investasi Anda.
                     </p>
