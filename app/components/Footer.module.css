@@ -32,9 +32,17 @@
     margin-bottom: 3rem;
 }
 
+.ctaButtons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
 .ctaButton {
-    font-size: 1rem;
-    padding: 0.85rem 2rem;
+    font-size: 0.95rem;
+    padding: 0.75rem 1.75rem;
+    border-radius: 8px;
 }
 
 .warning {

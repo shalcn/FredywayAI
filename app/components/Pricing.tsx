@@ -68,9 +68,16 @@ export default function Pricing() {
                     transition={{ duration: 0.8 }}
                 >
                     <h2>Investasi untuk Masa Depan Kepemimpinan Anda</h2>
-                    <p className={styles.urgency}>
-                        <Clock size={20} style={{ display: 'inline', marginRight: '8px', verticalAlign: 'text-bottom' }} /> <strong>{eventData.ebHeader.toUpperCase().replace(/(\d+)\s+/g, '$1 ')}</strong> Daftar sekarang dan hemat Rp 1.5 Juta.<br />Kuota terbatas 30 peserta.
-                    </p>
+                    <div className={styles.urgency}>
+                        <div className={styles.urgencyHeader}>
+                            <Clock size={20} />
+                            <strong>{eventData.ebHeader.toUpperCase().replace(/(\d+)\s+/g, '$1 ')}</strong>
+                        </div>
+                        <div className={styles.urgencyText}>
+                            Daftar sekarang dan hemat Rp 1.5 Juta.<br />
+                            Kuota terbatas 30 peserta.
+                        </div>
+                    </div>
                 </motion.div>
 
                 <div className={styles.pricingCards}>

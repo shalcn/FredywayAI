@@ -62,7 +62,7 @@ export default function Footer() {
                         }}>
                             Daftar Sekarang - Hemat Rp 1.5 Juta
                         </button>
-                        <button className="btn btn-secondary" onClick={() => {
+                        <button className={`${styles.ctaButton} btn btn-secondary`} onClick={() => {
                             document.getElementById('solution')?.scrollIntoView({ behavior: 'smooth' });
                         }}>
                             Lihat Detail Program
