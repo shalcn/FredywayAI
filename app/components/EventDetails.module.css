@@ -192,9 +192,14 @@
     }
 
     .mainCta {
-        font-size: 0.85rem !important;
-        padding: 14px 10px !important;
-        min-width: 280px;
+        font-size: 0.9rem !important;
+        padding: 14px 12px !important;
+        white-space: nowrap !important;
+        width: 100%;
+        max-width: 360px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
 

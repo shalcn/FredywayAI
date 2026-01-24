@@ -69,7 +69,7 @@ export default function Pricing() {
                 >
                     <h2>Investasi untuk Masa Depan Kepemimpinan Anda</h2>
                     <p className={styles.urgency}>
-                        <Clock size={20} style={{ display: 'inline', marginRight: '8px', verticalAlign: 'text-bottom' }} /> <strong>{eventData.ebHeader.toUpperCase().replace(/(\d+)\s+/g, '$1 ')}</strong> Daftar sekarang dan hemat Rp 1.5 Juta.<br />Kuota terbatas 30 peserta.
+                        <Clock size={20} style={{ display: 'inline', marginRight: '8px', verticalAlign: 'text-bottom' }} /> <strong>{eventData.ebHeader.toUpperCase().replace(/(\d+)\s+/g, '$1 ')}</strong> Daftar sekarang dan hemat Rp 1.5 Juta.<br />Kuota terbatas 30 peserta.
                     </p>
                 </motion.div>
 

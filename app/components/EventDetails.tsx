@@ -118,7 +118,7 @@ export default function EventDetails() {
                     <button className={`${styles.mainCta} btn btn-primary`} onClick={() => {
                         document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' });
                     }}>
-                        Daftar Sekarang - Hemat Rp 1.5 Juta
+                        Daftar Sekarang - <span style={{ whiteSpace: 'nowrap' }}>Hemat Rp 1.5 Juta</span>
                     </button>
                     <button className="btn btn-secondary" onClick={() => {
                         document.getElementById('solution')?.scrollIntoView({ behavior: 'smooth' });
