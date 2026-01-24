@@ -132,8 +132,8 @@
 }
 
 .ctaButtons button {
-    font-size: 1.1rem;
-    padding: 16px 40px;
+    font-size: 1rem;
+    padding: 0.85rem 2rem;
     border-radius: 12px;
     font-weight: 700;
     transition: all 0.3s ease;
@@ -179,32 +179,29 @@
     }
 
     .ctaButtons {
+        display: flex;
         flex-direction: column;
         align-items: center;
         gap: 12px;
         width: 100%;
-        max-width: 320px;
         margin: 0 auto;
-        padding: 0;
+        padding: 0 20px;
     }
 
+    .mainCta,
     .ctaButtons button {
-        width: 100%;
-        font-size: 1rem;
-        padding: 14px 30px;
-        text-align: center;
-    }
-
-    .mainCta {
         font-size: 1.05rem !important;
         padding: 0.85rem 1rem !important;
         white-space: nowrap !important;
         letter-spacing: -0.01em !important;
-        width: 100%;
-        display: flex;
+        width: 100% !important;
+        max-width: 320px !important;
+        margin: 0 auto !important;
+        display: flex !important;
         justify-content: center;
         align-items: center;
         border-radius: 8px !important;
+        box-sizing: border-box !important;
     }
 }
 
