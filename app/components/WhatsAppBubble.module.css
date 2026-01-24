@@ -1,6 +1,6 @@
 .bubble {
     position: fixed;
-    bottom: 220px;
+    bottom: 30px;
     /* Positioned higher above CTA */
     right: 30px;
     background-color: #25D366;
