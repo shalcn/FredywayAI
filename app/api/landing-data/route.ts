@@ -41,7 +41,17 @@ export async function GET() {
 // POST: Update data in Firebase
 export async function POST(request: Request) {
     try {
-        const newData = await request.json();
+        const body = await request.json();
+        console.log('Received request:', body);
+
+        // Handle Factory Reset
+        if (body.reset === true) {
+            console.log('Performing Factory Reset...');
+            await set(landingDataRef, defaultData);
+            return NextResponse.json({ success: true, data: defaultData });
+        }
+
+        const newData = body;
         console.log('Received new data:', newData);
 
         // Basic validation

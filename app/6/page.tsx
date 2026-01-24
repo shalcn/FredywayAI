@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Save, Loader2, CheckCircle2, Sparkles, LogOut, Settings, RotateCcw } from 'lucide-react';
+import { Save, Loader2, CheckCircle2, Sparkles, LogOut, Settings, UserX, AlertTriangle } from 'lucide-react';
 import styles from './page.module.css';
 import Login from './components/Login';
 import AccountSettings from './components/AccountSettings';
@@ -72,10 +72,63 @@ export default function AdminPage() {
         setIsAuthenticated(false);
     };
 
-    const handleReset = () => {
-        if (confirm('Apakah Anda yakin ingin mereset perubahan ke data terakhir yang tersimpan?')) {
-            fetchData();
-            setStatus({ type: null, message: '' });
+    const handleCredentialReset = async () => {
+        if (!confirm('Apakah Anda yakin ingin mereset username dan password kembali ke default (admin/admin123)?')) {
+            return;
+        }
+
+        setIsSaving(true);
+        setStatus({ type: null, message: '' });
+
+        try {
+            const res = await fetch('/api/auth/settings', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    username: 'admin',
+                    password: 'admin123'
+                }),
+            });
+
+            if (res.ok) {
+                setStatus({ type: 'success', message: 'Akun berhasil direset ke default (admin/admin123)!' });
+            } else {
+                const data = await res.json();
+                setStatus({ type: 'error', message: data.error || 'Gagal mereset kredensial' });
+            }
+        } catch (error) {
+            setStatus({ type: 'error', message: 'Terjadi kesalahan sistem' });
+        } finally {
+            setIsSaving(false);
+        }
+    };
+
+    const handleFactoryReset = async () => {
+        if (!confirm('PERHATIAN: Apakah Anda yakin ingin mereset SEMUA data kembali ke template default? Tindakan ini tidak dapat dibatalkan.')) {
+            return;
+        }
+
+        setIsSaving(true);
+        setStatus({ type: null, message: '' });
+
+        try {
+            const res = await fetch('/api/landing-data', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ reset: true }),
+            });
+
+            if (res.ok) {
+                const data = await res.json();
+                setFormData(data.data); // Update form with new default data
+                setStatus({ type: 'success', message: 'Data berhasil direset ke default!' });
+            } else {
+                setStatus({ type: 'error', message: 'Gagal mereset data.' });
+            }
+        } catch (error) {
+            setStatus({ type: 'error', message: 'Terjadi kesalahan sistem.' });
+        } finally {
+            setIsSaving(false);
         }
     };
 
@@ -129,16 +182,36 @@ export default function AdminPage() {
                     <p className={styles.subtitle}>Kelola informasi event landing page</p>
                     <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', marginTop: '1.5rem' }}>
                         {!showSettings && (
-                            <button
-                                type="button"
-                                onClick={handleReset}
-                                disabled={isSaving}
-                                className={styles.submitButton}
-                                style={{ width: 'auto', margin: 0, padding: '0.5rem 1rem', fontSize: '0.9rem', background: 'rgba(255,255,255,0.1)', color: 'white', border: '1px solid rgba(255,255,255,0.2)' }}
-                            >
-                                <RotateCcw size={18} />
-                                Reset
-                            </button>
+                            <>
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                                    <button
+                                        type="button"
+                                        onClick={handleCredentialReset}
+                                        disabled={isSaving}
+                                        className={styles.submitButton}
+                                        style={{ width: 'auto', margin: 0, padding: '0.5rem 1rem', fontSize: '0.9rem', background: 'rgba(239, 68, 68, 0.15)', color: '#fca5a5', border: '1px solid rgba(239, 68, 68, 0.3)' }}
+                                        title="Reset Akun (Username/Password to default)"
+                                    >
+                                        <UserX size={18} />
+                                        Reset Akun
+                                    </button>
+                                    <span style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.6)', textAlign: 'left', lineHeight: '1.2' }}>
+                                        Default:<br />
+                                        admin / admin123
+                                    </span>
+                                </div>
+                                <button
+                                    type="button"
+                                    onClick={handleFactoryReset}
+                                    disabled={isSaving}
+                                    className={styles.submitButton}
+                                    style={{ width: 'auto', margin: 0, padding: '0.5rem 1rem', fontSize: '0.9rem', background: 'rgba(234, 179, 8, 0.15)', color: '#facc15', border: '1px solid rgba(234, 179, 8, 0.3)' }}
+                                    title="Factory Reset (Restore default template)"
+                                >
+                                    <AlertTriangle size={18} />
+                                    Default
+                                </button>
+                            </>
                         )}
                         <button
                             className={styles.submitButton}
