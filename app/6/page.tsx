@@ -184,6 +184,19 @@ export default function AdminPage() {
                         {!showSettings && (
                             <>
                                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                                    <div style={{
+                                        fontSize: '0.75rem',
+                                        color: 'rgba(255,255,255,0.8)',
+                                        background: 'rgba(255,255,255,0.05)',
+                                        padding: '0.25rem 0.75rem',
+                                        borderRadius: '4px',
+                                        border: '1px solid rgba(255,255,255,0.1)',
+                                        textAlign: 'right',
+                                        lineHeight: '1.2'
+                                    }}>
+                                        <span style={{ display: 'block', fontSize: '0.65rem', opacity: 0.7, marginBottom: '2px' }}>Default Credential:</span>
+                                        <strong>admin / admin123</strong>
+                                    </div>
                                     <button
                                         type="button"
                                         onClick={handleCredentialReset}
@@ -195,10 +208,6 @@ export default function AdminPage() {
                                         <UserX size={18} />
                                         Reset Akun
                                     </button>
-                                    <span style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.6)', textAlign: 'left', lineHeight: '1.2' }}>
-                                        Default:<br />
-                                        admin / admin123
-                                    </span>
                                 </div>
                                 <button
                                     type="button"
