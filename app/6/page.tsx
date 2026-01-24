@@ -196,6 +196,10 @@ export default function AdminPage() {
 
                             <div className={styles.formGroup}>
                                 <label className={styles.label}>Batas Early Bird (Kartu Harga Normal)</label>
+                                <div className={styles.previewContainer}>
+                                    <p className={styles.previewLabel}>Preview Tampilan di Landing Page:</p>
+                                    <img src="/images/normal_price_preview.png" alt="Normal Price Preview" className={styles.previewImage} />
+                                </div>
                                 <input
                                     type="text"
                                     value={formData.ebNormalCard}
@@ -207,6 +211,10 @@ export default function AdminPage() {
 
                             <div className={styles.formGroup}>
                                 <label className={styles.label}>Batas Early Bird (Kartu Harga Early Bird)</label>
+                                <div className={styles.previewContainer}>
+                                    <p className={styles.previewLabel}>Preview Tampilan di Landing Page:</p>
+                                    <img src="/images/eb_price_preview.png" alt="EB Price Preview" className={styles.previewImage} />
+                                </div>
                                 <input
                                     type="text"
                                     value={formData.ebEBCard}
@@ -218,6 +226,13 @@ export default function AdminPage() {
 
                             <div className={styles.formGroup}>
                                 <label className={styles.label}>Batas Early Bird (General/Footer)</label>
+                                <div className={styles.previewContainer}>
+                                    <p className={styles.previewLabel}>Preview Tampilan di Landing Page:</p>
+                                    <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '10px' }}>
+                                        <img src="/images/footer_urgency_preview.png" alt="Footer Urgency Preview" className={styles.previewImage} />
+                                        <img src="/images/perhatian_preview.png" alt="Perhatian Preview" className={styles.previewImage} />
+                                    </div>
+                                </div>
                                 <input
                                     type="text"
                                     value={formData.earlyBirdDate}
@@ -229,6 +244,10 @@ export default function AdminPage() {
 
                             <div className={styles.formGroup}>
                                 <label className={styles.label}>Nomor WhatsApp (Tanpa +, Contoh: 628123456789)</label>
+                                <div className={styles.previewContainer}>
+                                    <p className={styles.previewLabel}>Preview Tampilan di Landing Page:</p>
+                                    <img src="/images/whatsapp_preview.png" alt="WhatsApp Preview" className={styles.previewImage} />
+                                </div>
                                 <input
                                     type="text"
                                     value={formData.waNumber}
