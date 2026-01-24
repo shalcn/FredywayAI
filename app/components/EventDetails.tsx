@@ -115,7 +115,7 @@ export default function EventDetails() {
                     animate={inView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.8, delay: 0.6 }}
                 >
-                    <button className="btn btn-primary" onClick={() => {
+                    <button className={`${styles.mainCta} btn btn-primary`} onClick={() => {
                         document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' });
                     }}>
                         Daftar Sekarang - Hemat Rp 1.5 Juta

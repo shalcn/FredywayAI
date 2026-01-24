@@ -139,6 +139,10 @@
     transition: all 0.3s ease;
 }
 
+.mainCta {
+    white-space: nowrap !important;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .section {
@@ -185,6 +189,12 @@
         font-size: 1rem;
         padding: 14px 30px;
         text-align: center;
+    }
+
+    .mainCta {
+        font-size: 0.85rem !important;
+        padding: 14px 10px !important;
+        min-width: 280px;
     }
 }
 
