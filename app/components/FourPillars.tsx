@@ -11,7 +11,7 @@ const pillars = [
         title: 'ANALISA DATA dengan AI',
         subtitle: 'Mengubah Informasi Berantakan Jadi Insight Tajam',
         points: [
-            'Cara analisa laporan kualitatif dari puluhan supervisor dalam 5 menit',
+            'Cara analisa laporan kualitatif dari puluhan supervisor dalam 5\u00A0menit',
             'Menemukan pola keluhan pelanggan dari ratusan chat WhatsApp',
             'Identifikasi tren kinerja tim tanpa harus baca satu per satu',
             'Template prompt siap pakai untuk berbagai jenis data'
@@ -34,7 +34,7 @@ const pillars = [
         title: 'DECISION MAKING dengan AI',
         subtitle: 'Putuskan dengan Data, Bukan Perasaan',
         points: [
-            'Matriks perbandingan objektif untuk memilih vendor, kandidat, berbagai keputusan atau opsi kebijakan hanya dalam hitungan menit saja',
+            'Matriks perbandingan objektif untuk memilih vendor, kandidat, berbagai keputusan atau opsi kebijakan hanya dalam hitungan menit\u00A0saja',
             'Identifikasi blind spot dan risiko tersembunyi dalam keputusan Anda',
             'Teknik Impact vs Effort untuk menentukan quick wins'
         ],

@@ -248,7 +248,8 @@
     }
 
     .pointsList li {
-        text-align: justify;
+        text-align: left;
+        font-size: 0.85rem;
     }
 
     .pillarNumber {
