@@ -16,7 +16,8 @@ export default function AdminPage() {
         earlyBirdDate: '',
         ebHeader: '',
         ebNormalCard: '',
-        ebEBCard: ''
+        ebEBCard: '',
+        waNumber: ''
     });
     const [isLoading, setIsLoading] = useState(true);
     const [isSaving, setIsSaving] = useState(false);
@@ -42,7 +43,8 @@ export default function AdminPage() {
                     earlyBirdDate: data.earlyBirdDate || '1 Februari 2026',
                     ebHeader: data.ebHeader || 'EARLY BIRD BERAKHIR 1 FEBRUARI 2026!',
                     ebNormalCard: data.ebNormalCard || 'Untuk pendaftaran setelah 1 Februari 2026',
-                    ebEBCard: data.ebEBCard || 'Bayar Sebelum 1 Februari 2026'
+                    ebEBCard: data.ebEBCard || 'Bayar Sebelum 1 Februari 2026',
+                    waNumber: data.waNumber || '6287775730572'
                 });
                 setIsLoading(false);
             })
@@ -218,6 +220,17 @@ export default function AdminPage() {
                                     onChange={e => setFormData({ ...formData, earlyBirdDate: e.target.value })}
                                     className={styles.input}
                                     placeholder="Contoh: 1 Februari 2026"
+                                />
+                            </div>
+
+                            <div className={styles.formGroup}>
+                                <label className={styles.label}>Nomor WhatsApp (Tanpa +, Contoh: 628123456789)</label>
+                                <input
+                                    type="text"
+                                    value={formData.waNumber}
+                                    onChange={e => setFormData({ ...formData, waNumber: e.target.value })}
+                                    className={styles.input}
+                                    placeholder="Contoh: 6287775730572"
                                 />
                             </div>
 

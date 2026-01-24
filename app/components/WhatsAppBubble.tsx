@@ -1,23 +1,44 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
 import styles from './WhatsAppBubble.module.css';
+import { usePathname } from 'next/navigation';
+import { landingDataRef } from '@/lib/firebase';
+import { onValue } from 'firebase/database';
 
 export default function WhatsAppBubble() {
     const [isVisible, setIsVisible] = useState(false);
+    const [waNumber, setWaNumber] = useState('6287775730572');
+    const pathname = usePathname();
 
     useEffect(() => {
+        // Hide on admin page
+        if (pathname === '/6') return;
+
+        // Set up real-time listener for waNumber
+        const unsubscribe = onValue(landingDataRef, (snapshot) => {
+            if (snapshot.exists()) {
+                const data = snapshot.val();
+                if (data.waNumber) {
+                    setWaNumber(data.waNumber);
+                }
+            }
+        });
+
         // Show after a small delay
         const timer = setTimeout(() => {
             setIsVisible(true);
         }, 1000);
 
-        return () => clearTimeout(timer);
-    }, []);
+        return () => {
+            clearTimeout(timer);
+            unsubscribe();
+        };
+    }, [pathname]);
 
     const handleClick = () => {
         const message = "Halo, saya tertarik dengan program Executive Strategic Leadership with AI. Bisa minta info lebih lanjut?";
-        const waLink = `https://wa.me/6287775730572?text=${encodeURIComponent(message)}`;
+        const waLink = `https://wa.me/${waNumber}?text=${encodeURIComponent(message)}`;
         window.open(waLink, '_blank');
     };
 
@@ -31,3 +52,4 @@ export default function WhatsAppBubble() {
         </div>
     );
 }
+

@@ -36,7 +36,8 @@ export default function Footer() {
                     date: data.date || '24 - 25 Februari 2026',
                     time: data.time || '09:00 - 16:00 WIB',
                     location: data.location || 'Hotel Grand Mercure, Kemayoran, Jakarta',
-                    earlyBirdDate: data.earlyBirdDate || '1 Februari 2026'
+                    earlyBirdDate: data.earlyBirdDate || '1 Februari 2026',
+                    waNumber: data.waNumber || '6287775730572'
                 };
                 setEventData(newEventData);
                 // Cache to localStorage
@@ -84,7 +85,8 @@ export default function Footer() {
                             <h4>Hubungi Kami</h4>
                             <div className={styles.contactItem}>
                                 <Phone size={20} />
-                                <span>WhatsApp: Kak Andersen (<a href="https://wa.me/6287775730572" target="_blank" rel="noopener noreferrer" style={{ color: '#3182ce', textDecoration: 'underline' }}>+62 877-7573-0572</a>)</span>
+                                <span>WhatsApp: Kak Andersen (<a href={`https://wa.me/${eventData.waNumber || '6287775730572'}?text=${encodeURIComponent("Halo, saya ingin tanya seputar program ini...")}`} target="_blank" rel="noopener noreferrer" style={{ color: '#3182ce', textDecoration: 'underline' }}>+{eventData.waNumber || '6287775730572'}</a>)</span>
+
                             </div>
                             <div className={styles.contactItem}>
                                 <Mail size={20} />
