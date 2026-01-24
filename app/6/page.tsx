@@ -181,6 +181,10 @@ export default function AdminPage() {
 
                             <div className={styles.formGroup}>
                                 <label className={styles.label}>Batas Early Bird (Header Pricing)</label>
+                                <div className={styles.previewContainer}>
+                                    <p className={styles.previewLabel}>Preview Tampilan di Landing Page:</p>
+                                    <img src="/images/urgency_preview.png" alt="Urgency Preview" className={styles.previewImage} />
+                                </div>
                                 <input
                                     type="text"
                                     value={formData.ebHeader}
