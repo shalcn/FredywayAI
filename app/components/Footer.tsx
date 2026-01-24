@@ -94,7 +94,7 @@ export default function Footer() {
                             <h4>Hubungi Kami</h4>
                             <div className={styles.contactItem}>
                                 <Phone size={20} />
-                                <span>WhatsApp: Kak Andersen (<a href={`https://wa.me/${eventData.waNumber || '6287775730572'}?text=${encodeURIComponent("Halo, saya ingin tanya seputar program ini...")}`} target="_blank" rel="noopener noreferrer" style={{ color: '#3182ce', textDecoration: 'underline' }}>+{eventData.waNumber || '6287775730572'}</a>)</span>
+                                <span>WhatsApp:<a href={`https://wa.me/${eventData.waNumber || '6287775730572'}?text=${encodeURIComponent("Halo, saya ingin tanya seputar program ini...")}`} target="_blank" rel="noopener noreferrer" style={{ color: '#3182ce', textDecoration: 'underline' }}>+{eventData.waNumber || '6287775730572'}</a></span>
 
                             </div>
                             <div className={styles.contactItem}>

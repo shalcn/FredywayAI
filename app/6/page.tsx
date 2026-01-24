@@ -248,7 +248,7 @@ export default function AdminPage() {
                                 <label className={styles.label}>Nomor WhatsApp (Tanpa +, Contoh: 628123456789)</label>
                                 <div className={styles.previewContainer}>
                                     <p className={styles.previewLabel}>Preview Tampilan di Landing Page:</p>
-                                    <img src="/images/whatsapp_preview.png" alt="WhatsApp Preview" className={styles.previewImage} />
+                                    <img src="/images/whatsapp_footer_preview_v2.png" alt="WhatsApp Preview" className={styles.previewImage} />
                                 </div>
                                 <input
                                     type="text"
@@ -263,7 +263,7 @@ export default function AdminPage() {
                                 <label className={styles.label}>Nomor WhatsApp Floating Bubble (Tanpa +)</label>
                                 <div className={styles.previewContainer}>
                                     <p className={styles.previewLabel}>Preview Tampilan di Landing Page:</p>
-                                    <img src="/images/wa_bubble_preview.png" alt="WhatsApp Bubble Preview" className={styles.previewImage} />
+                                    <img src="/images/wa_bubble_preview_v2.png" alt="WhatsApp Bubble Preview" className={styles.previewImage} />
                                 </div>
                                 <input
                                     type="text"
