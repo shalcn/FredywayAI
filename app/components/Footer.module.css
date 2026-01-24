@@ -185,15 +185,26 @@
         text-align: center;
     }
 
+    .ctaButtons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin: 0 auto;
+    }
+
     .ctaButton {
-        font-size: 0.625rem !important;
-        padding: 0.6rem 0.5rem !important;
+        font-size: 0.55rem !important;
+        padding: 8px 4px !important;
         white-space: nowrap !important;
         letter-spacing: -0.02em !important;
         width: 100%;
-        max-width: 270px;
-        margin: 0 auto;
+        max-width: 260px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
+
 
     .footerMain {
         padding: 3rem 1.5rem;

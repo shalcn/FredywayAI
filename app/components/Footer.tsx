@@ -56,11 +56,14 @@ export default function Footer() {
                 <div className="container">
                     <h2>Jangan Tunda Lagi.</h2>
                     <h3>Masa Depan Kepemimpinan Anda Dimulai Hari Ini.</h3>
-                    <button className={`${styles.ctaButton} btn btn-primary`} onClick={() => {
-                        document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' });
-                    }}>
-                        Daftar Sekarang - Hemat Rp 1.5 Juta
-                    </button>
+                    <div className={styles.ctaButtons}>
+                        <button className={`${styles.ctaButton} btn btn-primary`} onClick={() => {
+                            document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' });
+                        }}>
+                            Daftar Sekarang - Hemat Rp 1.5 Juta
+                        </button>
+                    </div>
+
                     <div className={styles.warning}>
                         <div className={styles.warningHeader}>
                             <AlertTriangle size={24} />
