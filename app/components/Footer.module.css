@@ -189,20 +189,22 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        gap: 12px;
         width: 100%;
+        max-width: 320px;
         margin: 0 auto;
     }
 
     .ctaButton {
-        font-size: 0.55rem !important;
-        padding: 8px 4px !important;
+        font-size: 1.05rem !important;
+        padding: 0.85rem 1rem !important;
         white-space: nowrap !important;
-        letter-spacing: -0.02em !important;
+        letter-spacing: -0.01em !important;
         width: 100%;
-        max-width: 260px;
         display: flex;
         justify-content: center;
         align-items: center;
+        border-radius: 8px !important;
     }
 
 
