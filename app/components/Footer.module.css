@@ -72,13 +72,12 @@
 .warningText {
     margin: 0;
     text-align: justify;
-    text-justify: inter-word;
+    text-align-last: center;
     color: var(--accent-orange);
     font-size: 0.95rem;
     line-height: 1.6;
-    word-spacing: normal;
-    hyphens: auto;
-    -webkit-hyphens: auto;
+    word-spacing: -1px;
+    /* Tighter word spacing to fit better */
 }
 
 .footerMain {

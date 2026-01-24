@@ -66,7 +66,7 @@ export default function Footer() {
                             <strong>PERHATIAN:</strong>
                         </div>
                         <p className={styles.warningText}>
-                            Kuota terbatas hanya untuk 30 peserta karena kami ingin memastikan setiap peserta mendapat perhatian maksimal dan bisa praktik langsung. Early Bird berakhir {eventData.earlyBirdDate}. Setelah itu harga\u00A0naik\u00A0Rp\u00A01.5\u00A0Juta.
+                            Kuota terbatas hanya untuk 30 peserta karena kami ingin memastikan setiap peserta mendapat perhatian maksimal dan bisa praktik langsung. Early Bird berakhir {eventData.earlyBirdDate}. Setelah itu harga naik Rp 1.5 Juta.
                         </p>
                     </div>
                 </div>
