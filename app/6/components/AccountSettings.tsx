@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { User, Lock, Save, Loader2, CheckCircle2, AlertCircle } from 'lucide-react';
+import { User, Lock, Save, Loader2, CheckCircle2, AlertCircle, RotateCcw } from 'lucide-react';
 import styles from '../page.module.css';
 
 export default function AccountSettings() {
@@ -40,6 +40,38 @@ export default function AccountSettings() {
             } else {
                 const data = await res.json();
                 setStatus({ type: 'error', message: data.error || 'Gagal menyimpan perubahan' });
+            }
+        } catch (error) {
+            setStatus({ type: 'error', message: 'Terjadi kesalahan sistem' });
+        } finally {
+            setIsSaving(false);
+        }
+    };
+
+    const handleResetDefaults = async () => {
+        if (!confirm('Apakah Anda yakin ingin mereset username dan password kembali ke default (admin/admin123)?')) {
+            return;
+        }
+
+        setIsSaving(true);
+        setStatus({ type: null, message: '' });
+
+        try {
+            const res = await fetch('/api/auth/settings', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    username: 'admin',
+                    password: 'admin123'
+                }),
+            });
+
+            if (res.ok) {
+                setStatus({ type: 'success', message: 'Kredensial berhasil direset ke default (admin/admin123)!' });
+                setFormData({ ...formData, password: '', confirmPassword: '' });
+            } else {
+                const data = await res.json();
+                setStatus({ type: 'error', message: data.error || 'Gagal mereset kredensial' });
             }
         } catch (error) {
             setStatus({ type: 'error', message: 'Terjadi kesalahan sistem' });
@@ -115,23 +147,36 @@ export default function AccountSettings() {
                     </div>
                 </div>
 
-                <button
-                    type="submit"
-                    disabled={isSaving}
-                    className={styles.submitButton}
-                >
-                    {isSaving ? (
-                        <>
-                            <Loader2 className="animate-spin" size={20} />
-                            Menyimpan...
-                        </>
-                    ) : (
-                        <>
-                            <Save size={20} />
-                            Perbarui Akun
-                        </>
-                    )}
-                </button>
+                <div style={{ display: 'flex', gap: '1rem' }}>
+                    <button
+                        type="button"
+                        onClick={handleResetDefaults}
+                        disabled={isSaving}
+                        className={styles.submitButton}
+                        style={{ background: 'rgba(239, 68, 68, 0.15)', color: '#fca5a5', border: '1px solid rgba(239, 68, 68, 0.3)', width: 'auto' }}
+                    >
+                        <RotateCcw size={20} />
+                        Reset ke Default
+                    </button>
+                    <button
+                        type="submit"
+                        disabled={isSaving}
+                        className={styles.submitButton}
+                        style={{ flex: 1 }}
+                    >
+                        {isSaving ? (
+                            <>
+                                <Loader2 className="animate-spin" size={20} />
+                                Menyimpan...
+                            </>
+                        ) : (
+                            <>
+                                <Save size={20} />
+                                Perbarui Akun
+                            </>
+                        )}
+                    </button>
+                </div>
             </form>
         </div>
     );

@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Save, Loader2, CheckCircle2, Sparkles, LogOut, Settings } from 'lucide-react';
+import { Save, Loader2, CheckCircle2, Sparkles, LogOut, Settings, RotateCcw } from 'lucide-react';
 import styles from './page.module.css';
 import Login from './components/Login';
 import AccountSettings from './components/AccountSettings';
@@ -24,16 +24,8 @@ export default function AdminPage() {
     const [isSaving, setIsSaving] = useState(false);
     const [status, setStatus] = useState<{ type: 'success' | 'error' | null, message: string }>({ type: null, message: '' });
 
-    useEffect(() => {
-        // Check authentication
-        const auth = localStorage.getItem('admin_authenticated');
-        if (auth === 'true') {
-            setIsAuthenticated(true);
-        } else {
-            setIsAuthenticated(false);
-        }
-
-        // Fetch current data
+    const fetchData = () => {
+        setIsLoading(true);
         fetch('/api/landing-data')
             .then(res => res.json())
             .then(data => {
@@ -55,6 +47,19 @@ export default function AdminPage() {
                 setStatus({ type: 'error', message: 'Gagal memuat data.' });
                 setIsLoading(false);
             });
+    };
+
+    useEffect(() => {
+        // Check authentication
+        const auth = localStorage.getItem('admin_authenticated');
+        if (auth === 'true') {
+            setIsAuthenticated(true);
+        } else {
+            setIsAuthenticated(false);
+        }
+
+        // Fetch current data
+        fetchData();
     }, []);
 
     const handleLoginSuccess = () => {
@@ -65,6 +70,13 @@ export default function AdminPage() {
     const handleLogout = () => {
         localStorage.removeItem('admin_authenticated');
         setIsAuthenticated(false);
+    };
+
+    const handleReset = () => {
+        if (confirm('Apakah Anda yakin ingin mereset perubahan ke data terakhir yang tersimpan?')) {
+            fetchData();
+            setStatus({ type: null, message: '' });
+        }
     };
 
     const handleSubmit = async (e: React.FormEvent) => {
@@ -116,6 +128,18 @@ export default function AdminPage() {
                     <h1 className={styles.title}>Admin Dashboard</h1>
                     <p className={styles.subtitle}>Kelola informasi event landing page</p>
                     <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', marginTop: '1.5rem' }}>
+                        {!showSettings && (
+                            <button
+                                type="button"
+                                onClick={handleReset}
+                                disabled={isSaving}
+                                className={styles.submitButton}
+                                style={{ width: 'auto', margin: 0, padding: '0.5rem 1rem', fontSize: '0.9rem', background: 'rgba(255,255,255,0.1)', color: 'white', border: '1px solid rgba(255,255,255,0.2)' }}
+                            >
+                                <RotateCcw size={18} />
+                                Reset
+                            </button>
+                        )}
                         <button
                             className={styles.submitButton}
                             style={{ width: 'auto', margin: 0, padding: '0.5rem 1rem', fontSize: '0.9rem', background: showSettings ? 'var(--gold-main)' : 'rgba(255,255,255,0.1)', color: showSettings ? 'black' : 'white', border: '1px solid rgba(212,175,55,0.2)' }}
@@ -248,7 +272,7 @@ export default function AdminPage() {
                                 <label className={styles.label}>Nomor WhatsApp (Tanpa +, Contoh: 628123456789)</label>
                                 <div className={styles.previewContainer}>
                                     <p className={styles.previewLabel}>Preview Tampilan di Landing Page:</p>
-                                    <img src="/images/whatsapp_footer_preview_v2.png" alt="WhatsApp Preview" className={styles.previewImage} />
+                                    <img src="/images/whatsapp_footer_preview_v3.png" alt="WhatsApp Preview" className={styles.previewImage} />
                                 </div>
                                 <input
                                     type="text"
@@ -274,23 +298,26 @@ export default function AdminPage() {
                                 />
                             </div>
 
-                            <button
-                                type="submit"
-                                disabled={isSaving}
-                                className={styles.submitButton}
-                            >
-                                {isSaving ? (
-                                    <>
-                                        <Loader2 className="animate-spin" size={20} />
-                                        Menyimpan...
-                                    </>
-                                ) : (
-                                    <>
-                                        <Save size={20} />
-                                        Simpan Perubahan
-                                    </>
-                                )}
-                            </button>
+                            <div style={{ display: 'flex', gap: '1rem', marginTop: '2rem' }}>
+                                <button
+                                    type="submit"
+                                    disabled={isSaving}
+                                    className={styles.submitButton}
+                                    style={{ flex: 1 }}
+                                >
+                                    {isSaving ? (
+                                        <>
+                                            <Loader2 className="animate-spin" size={20} />
+                                            Menyimpan...
+                                        </>
+                                    ) : (
+                                        <>
+                                            <Save size={20} />
+                                            Simpan Perubahan
+                                        </>
+                                    )}
+                                </button>
+                            </div>
 
                             <div className={styles.footer}>
                                 Perubahan akan langsung terlihat di landing page
