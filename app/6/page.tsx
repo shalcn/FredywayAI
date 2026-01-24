@@ -185,17 +185,17 @@ export default function AdminPage() {
                             <>
                                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                                     <div style={{
-                                        fontSize: '0.75rem',
-                                        color: 'rgba(255,255,255,0.8)',
-                                        background: 'rgba(255,255,255,0.05)',
-                                        padding: '0.25rem 0.75rem',
-                                        borderRadius: '4px',
-                                        border: '1px solid rgba(255,255,255,0.1)',
+                                        fontSize: '0.9rem',
+                                        color: 'rgba(255,255,255,0.9)',
+                                        background: 'rgba(255,255,255,0.1)',
+                                        padding: '0.5rem 1rem',
+                                        borderRadius: '6px',
+                                        border: '1px solid rgba(255,255,255,0.2)',
                                         textAlign: 'right',
-                                        lineHeight: '1.2'
+                                        lineHeight: '1.3'
                                     }}>
-                                        <span style={{ display: 'block', fontSize: '0.65rem', opacity: 0.7, marginBottom: '2px' }}>Default Credential:</span>
-                                        <strong>admin / admin123</strong>
+                                        <span style={{ display: 'block', fontSize: '0.75rem', opacity: 0.8, marginBottom: '4px' }}>Default Credential:</span>
+                                        <strong style={{ fontSize: '1rem', letterSpacing: '0.5px' }}>admin / admin123</strong>
                                     </div>
                                     <button
                                         type="button"
