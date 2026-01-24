@@ -186,11 +186,12 @@
     }
 
     .ctaButton {
-        font-size: 1.1rem !important;
-        padding: 0.875rem 0.5rem !important;
+        font-size: 0.625rem !important;
+        padding: 0.6rem 0.5rem !important;
         white-space: nowrap !important;
+        letter-spacing: -0.02em !important;
         width: 100%;
-        max-width: 320px;
+        max-width: 270px;
         margin: 0 auto;
     }
 
