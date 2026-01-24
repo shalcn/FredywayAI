@@ -55,7 +55,7 @@ export default function Hero() {
                         animate={inView ? { opacity: 1, y: 0 } : {}}
                         transition={{ duration: 0.8, delay: 0.6 }}
                     >
-                        Transformasi dari Executive yang KEWALAHAN menjadi Leader yang MENGUASAI Data, Keputusan, dan Strategi dengan Bantuan AI
+                        Transformasi dari Executive yang KEWALAHAN menjadi Leader yang MENGUASAI Data, Keputusan, dan Strategi dengan Bantuan&nbsp;AI
                     </motion.p>
 
                     <motion.div

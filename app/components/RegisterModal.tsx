@@ -15,7 +15,8 @@ export default function RegisterModal({ isOpen, onClose }: RegisterModalProps) {
     const [isSuccess, setIsSuccess] = useState(false);
     const [formData, setFormData] = useState({
         name: '',
-        phone: ''
+        company: '',
+        position: ''
     });
 
     const handleSubmit = async (e: React.FormEvent) => {
@@ -26,13 +27,18 @@ export default function RegisterModal({ isOpen, onClose }: RegisterModalProps) {
         await new Promise(resolve => setTimeout(resolve, 1000));
 
         // Encode message
-        const message = `Halo Admin, saya ${formData.name}. Saya ingin mendaftar program Executive Strategic Leadership with AI`;
-        const waLink = `https://wa.me/6285813915353?text=${encodeURIComponent(message)}`;
+        const message = `Halo Admin, saya ${formData.name}.
+Perusahaan: ${formData.company}
+Jabatan: ${formData.position}
+
+Saya ingin mendaftar program Executive Strategic Leadership with AI`;
+        const waLink = `https://wa.me/6287775730572?text=${encodeURIComponent(message)}`;
 
         window.open(waLink, '_blank');
 
         setIsSubmitting(false);
-        setIsSuccess(true);
+        setFormData({ name: '', company: '', position: '' });
+        onClose();
     };
 
     return (
@@ -50,71 +56,66 @@ export default function RegisterModal({ isOpen, onClose }: RegisterModalProps) {
                             <X size={24} />
                         </button>
 
-                        {!isSuccess ? (
-                            <>
-                                <div className={styles.header}>
-                                    <h2>Daftar Sekarang</h2>
-                                    <p>Isi data diri Anda untuk mengamankan slot Early Bird.</p>
-                                </div>
+                        <div className={styles.header}>
+                            <h2>Daftar Sekarang</h2>
+                            <p>Isi data diri Anda untuk mengamankan slot Early Bird.</p>
+                        </div>
 
-                                <form className={styles.form} onSubmit={handleSubmit}>
-                                    <div className={styles.inputGroup}>
-                                        <label htmlFor="name">Nama Lengkap</label>
-                                        <input
-                                            type="text"
-                                            id="name"
-                                            required
-                                            placeholder="Masukkan nama sesuai KTP"
-                                            value={formData.name}
-                                            onChange={e => setFormData({ ...formData, name: e.target.value })}
-                                        />
-                                    </div>
-
-                                    <div className={styles.inputGroup}>
-                                        <label htmlFor="phone">Nomor WhatsApp</label>
-                                        <input
-                                            type="tel"
-                                            id="phone"
-                                            required
-                                            placeholder="Contoh: 081234567890"
-                                            value={formData.phone}
-                                            onChange={e => setFormData({ ...formData, phone: e.target.value })}
-                                        />
-                                    </div>
-
-                                    <button
-                                        type="submit"
-                                        className={styles.submitBtn}
-                                        disabled={isSubmitting}
-                                    >
-                                        {isSubmitting ? (
-                                            <>
-                                                <Loader2 className="animate-spin" />
-                                                Memproses...
-                                            </>
-                                        ) : (
-                                            <>
-                                                Konfirmasi Pendaftaran
-                                                <ArrowRight size={20} />
-                                            </>
-                                        )}
-                                    </button>
-                                </form>
-                            </>
-                        ) : (
-                            <div className={styles.success}>
-                                <CheckCircle2 className={styles.successIcon} />
-                                <h3>Pendaftaran Berhasil!</h3>
-                                <p>Terima kasih, <strong>{formData.name}</strong>. Tim kami akan segera menghubungi Anda melalui WhatsApp <strong>{formData.phone}</strong> untuk langkah pembayaran selanjutnya.</p>
-                                <button
-                                    className={styles.submitBtn}
-                                    onClick={onClose}
-                                    style={{ marginTop: '2rem' }}
-                                >
-                                    Selesai
-                                </button>
+                        <form className={styles.form} onSubmit={handleSubmit}>
+                            <div className={styles.inputGroup}>
+                                <label htmlFor="name">Nama Lengkap</label>
+                                <input
+                                    type="text"
+                                    id="name"
+                                    required
+                                    placeholder="Masukkan nama sesuai KTP"
+                                    value={formData.name}
+                                    onChange={e => setFormData({ ...formData, name: e.target.value })}
+                                />
                             </div>
-                        )}
+
+                            <div className={styles.inputGroup}>
+                                <label htmlFor="company">Perusahaan</label>
+                                <input
+                                    type="text"
+                                    id="company"
+                                    required
+                                    placeholder="Nama Perusahaan"
+                                    value={formData.company}
+                                    onChange={e => setFormData({ ...formData, company: e.target.value })}
+                                />
+                            </div>
+
+                            <div className={styles.inputGroup}>
+                                <label htmlFor="position">Jabatan</label>
+                                <input
+                                    type="text"
+                                    id="position"
+                                    required
+                                    placeholder="Jabatan saat ini"
+                                    value={formData.position}
+                                    onChange={e => setFormData({ ...formData, position: e.target.value })}
+                                />
+                            </div>
+
+                            <button
+                                type="submit"
+                                className={styles.submitBtn}
+                                disabled={isSubmitting}
+                            >
+                                {isSubmitting ? (
+                                    <>
+                                        <Loader2 className="animate-spin" />
+                                        Memproses...
+                                    </>
+                                ) : (
+                                    <>
+                                        Konfirmasi Pendaftaran
+                                        <ArrowRight size={20} />
+                                    </>
+                                )}
+                            </button>
+                        </form>
                     </motion.div>
                 </div>
             )}

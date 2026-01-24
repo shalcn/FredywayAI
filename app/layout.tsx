@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Roboto, Playfair_Display } from "next/font/google";
 import "./globals.css";
+import WhatsAppBubble from "./components/WhatsAppBubble";
 
 const roboto = Roboto({
   weight: ['300', '400', '500', '700'],
@@ -43,6 +44,7 @@ export default function RootLayout({
       </head>
       <body className={`${roboto.variable} ${playfair.variable}`}>
         {children}
+        <WhatsAppBubble />
       </body>
     </html>
   );

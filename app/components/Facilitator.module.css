@@ -155,10 +155,12 @@
 
     .header h2 {
         font-size: 1.5rem;
+        text-align: center;
     }
 
     .facilitatorCard {
         padding: 1.5rem 1.25rem 3rem;
+        text-align: center;
     }
 
     .facilitatorImage {
@@ -167,11 +169,18 @@
 
     .content h3 {
         font-size: 1.5rem;
+        text-align: center;
     }
 
     .title {
         font-size: 1rem;
         margin-bottom: 1.5rem;
+        text-align: center;
+    }
+
+    .credItem {
+        justify-content: center;
+        text-align: left;
     }
 
     .credentials {
@@ -184,11 +193,13 @@
 
     .quote {
         padding: 1.5rem;
+        text-align: center;
     }
 
     .quote p {
         font-size: 1rem;
         line-height: 1.6;
+        text-align: justify;
     }
 
     .imageWrapper {

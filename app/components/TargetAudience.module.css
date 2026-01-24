@@ -88,10 +88,22 @@
     color: rgba(255, 255, 255, 0.9);
     line-height: 1.7;
     font-size: 1.05rem;
+    text-align: center;
+    text-align-last: center;
 }
 
 @media (max-width: 768px) {
     .section {
         padding: 60px 0;
+    }
+}
+
+@media (max-width: 320px) {
+    .card h3 {
+        text-align: center !important;
+    }
+
+    .card p {
+        text-align: justify !important;
     }
 }

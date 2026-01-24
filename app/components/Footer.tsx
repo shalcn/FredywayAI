@@ -36,15 +36,15 @@ export default function Footer() {
             <div className={styles.cta}>
                 <div className="container">
                     <h2>Jangan Tunda Lagi.</h2>
-                    <h3>Masa Depan Kepemimpinan Anda Dimulai Hari Ini.</h3>
+                    <h3>Masa Depan Kepemimpinan Anda Dimulai Hari Ini.</h3>
                     <button className="btn btn-primary" style={{ fontSize: '1.25rem', padding: '1.25rem 3rem' }} onClick={() => {
                         document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' });
                     }}>
                         Daftar Sekarang - Hemat Rp 1.5 Juta
                     </button>
                     <p className={styles.warning}>
-                        <AlertTriangle size={20} style={{ display: 'inline', marginRight: '8px', verticalAlign: 'text-bottom' }} /> <strong>PERHATIAN:</strong> Kuota terbatas hanya untuk 30 peserta karena kami ingin memastikan setiap peserta mendapat perhatian maksimal dan bisa praktik langsung.
-                        <br />Early Bird berakhir {eventData.earlyBirdDate}. Setelah itu harga naik Rp 1.5 Juta.
+                        <AlertTriangle size={20} style={{ display: 'inline', marginRight: '8px', verticalAlign: 'text-bottom' }} /> <strong>PERHATIAN:</strong> Kuota terbatas hanya untuk 30 peserta karena kami ingin memastikan setiap peserta mendapat perhatian maksimal dan bisa praktik langsung.
+                        <br />Early Bird berakhir {eventData.earlyBirdDate}. Setelah itu harga naik Rp 1.5 Juta.
                     </p>
                 </div>
             </div>
@@ -54,7 +54,7 @@ export default function Footer() {
                     <div className={styles.footerGrid}>
                         <div className={styles.footerBrand}>
                             <img src="/images/LOGO BUNDAR.PNG" alt="Freddway Coaching Consulting" className={styles.footerLogo} />
-                            <p>25+ Tahun Mengembangkan Leader Indonesia</p>
+                            <p>25+ Tahun Mengembangkan Leader Indonesia</p>
                         </div>
 
                         <div className={styles.footerContact}>

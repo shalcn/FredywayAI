@@ -37,6 +37,8 @@
     margin-bottom: 20px;
     line-height: 1.2;
     letter-spacing: -0.02em;
+    text-align: center;
+    text-align-last: center;
 }
 
 .subtitle {
@@ -45,6 +47,8 @@
     line-height: 1.7;
     max-width: 900px;
     margin: 0 auto;
+    text-align: center;
+    text-align-last: center;
 }
 
 .eventInfo {
@@ -143,10 +147,12 @@
 
     .header h2 {
         font-size: 2.2rem;
+        text-align: center;
     }
 
     .subtitle {
         font-size: 1.1rem;
+        text-align: justify;
     }
 
     .eventInfo {
@@ -156,12 +162,16 @@
 
     .infoCard {
         padding: 20px;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
     }
 
     .urgency {
         font-size: 1rem;
         padding: 14px 24px;
         text-align: center;
+        flex-direction: column;
     }
 
     .ctaButtons {
@@ -174,6 +184,16 @@
         width: 100%;
         font-size: 1rem;
         padding: 14px 30px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 320px) {
+
+    .subtitle,
+    .infoCard span,
+    .urgency {
+        text-align: justify !important;
     }
 }
 

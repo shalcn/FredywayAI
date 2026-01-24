@@ -88,6 +88,8 @@
     margin-bottom: 0.5rem;
     text-transform: uppercase;
     letter-spacing: 2px;
+    text-align: center;
+    text-align-last: center;
 }
 
 .pricingCard .cardSubtitle {
@@ -96,7 +98,11 @@
     font-size: 0.9rem;
     margin-bottom: 2rem;
     font-family: var(--font-primary);
+    margin-bottom: 2rem;
+    font-family: var(--font-primary);
     line-height: 1.6;
+    text-align: center;
+    text-align-last: center;
 }
 
 .pricingCard .price {
@@ -217,6 +223,8 @@
     color: var(--text-white-muted);
     /* Muted white text */
     line-height: 1.8;
+    text-align: center;
+    text-align-last: center;
 }
 
 .inhouse {
@@ -251,6 +259,11 @@
 
     .pricingCard {
         padding: 2rem 1.25rem;
+        text-align: center;
+    }
+
+    .pricingCard .cardSubtitle {
+        text-align: center;
     }
 
     .pricingCard .amount {
@@ -275,27 +288,46 @@
     .includes h3 {
         font-size: 1.5rem;
         margin-bottom: 1.5rem;
+        text-align: center;
+    }
+
+    .includeItem {
+        text-align: left;
     }
 
     .includeItem span:last-child {
         font-size: 0.95rem;
+        text-align: justify;
     }
 
     .guarantee {
         padding: 2rem 1.25rem;
         margin-bottom: 2rem;
+        text-align: center;
     }
 
     .guarantee h3 {
         font-size: 1.5rem;
+        text-align: center;
     }
 
     .guarantee p {
         font-size: 0.95rem;
+        text-align: justify;
     }
 
     .inhouse {
         padding: 1.5rem;
         font-size: 1.15rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 320px) {
+
+    .cardSubtitle,
+    .includeItem span,
+    .guarantee p {
+        text-align: justify !important;
     }
 }

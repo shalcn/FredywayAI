@@ -76,7 +76,7 @@ export default function Facilitator() {
                         </div>
 
                         <div className={styles.quote}>
-                            <div className={styles.quoteIcon}>"</div>
+
                             <p>
                                 Dalam 5 tahun ke depan, perbedaan antara leader yang sukses dan yang tertinggal bukan soal siapa yang lebih pintar atau lebih berpengalaman. Tapi siapa yang lebih cepat beradaptasi menggunakan AI sebagai alat untuk memperkuat kepemimpinan mereka.
                             </p>

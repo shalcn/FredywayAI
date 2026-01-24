@@ -53,6 +53,8 @@
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .pillarCard:hover {
@@ -106,6 +108,7 @@
     font-weight: 500;
     line-height: 1.5;
     min-height: 3rem;
+    text-align: center;
     /* Align lines */
 }
 
@@ -124,6 +127,7 @@
     color: rgba(255, 255, 255, 0.8);
     line-height: 1.6;
     font-size: 0.95rem;
+    text-align: left;
 }
 
 .checkmark {
@@ -141,6 +145,7 @@
     border-radius: 20px;
     padding: 3rem;
     text-align: center;
+    text-align-last: center;
     position: relative;
     overflow: hidden;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
@@ -186,6 +191,8 @@
     max-width: 900px;
     margin: 0 auto;
     line-height: 1.8;
+    text-align: center;
+    text-align-last: center;
 }
 
 @media (max-width: 768px) {
@@ -207,6 +214,7 @@
 
     .header p {
         font-size: 1rem;
+        text-align: center;
     }
 
     .pillarsContainer {
@@ -217,12 +225,14 @@
 
     .pillarCard {
         padding: 2.5rem 1.5rem 1.5rem;
+        text-align: center;
+        align-items: center;
     }
 
     .pillarIcon {
         width: 36px;
         height: 36px;
-        margin-bottom: 1rem;
+        margin: 0 auto 1rem;
     }
 
     .pillarCard h3 {
@@ -233,10 +243,17 @@
         font-size: 0.9rem;
         min-height: auto;
         margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    .pointsList li {
+        text-align: justify;
     }
 
     .pillarNumber {
-        left: 1.25rem;
+        left: 50%;
+        transform: translateX(-50%);
+        top: -20px;
         width: 40px;
         height: 40px;
         font-size: 1.25rem;
@@ -244,6 +261,7 @@
 
     .bonus {
         padding: 2rem 1.25rem;
+        text-align: center;
     }
 
     .bonusTag {
@@ -254,10 +272,21 @@
 
     .bonus h3 {
         font-size: 1.5rem;
+        text-align: center;
     }
 
     .bonus p {
         font-size: 0.95rem;
         line-height: 1.6;
+        text-align: justify;
+    }
+}
+
+@media (max-width: 320px) {
+
+    .subtitle,
+    .pointsList li,
+    .bonus p {
+        text-align: justify !important;
     }
 }

@@ -83,7 +83,7 @@ export default function Pricing() {
                         </div>
                         <div className={styles.cardHeader}>
                             <h3>EARLY BIRD</h3>
-                            <p className={styles.cardSubtitle}>{eventData.ebEBCard}<br />Hemat Rp 1.500.000!</p>
+                            <p className={styles.cardSubtitle}>{eventData.ebEBCard}<br />Hemat Rp 1.500.000 !</p>
                         </div>
                         <div className={styles.price}>
                             <span className={styles.currency}>Rp</span>

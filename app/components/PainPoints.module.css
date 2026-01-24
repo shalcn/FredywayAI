@@ -92,6 +92,8 @@
     color: var(--text-white-muted);
     line-height: 1.65;
     font-size: 0.95rem;
+    text-align: center;
+    text-align-last: center;
 }
 
 @media (max-width: 768px) {
@@ -105,6 +107,7 @@
 
     .header p {
         font-size: 1rem;
+        text-align: center;
     }
 
     .grid {
@@ -113,13 +116,17 @@
     }
 
     .card {
-        padding: 1.25rem;
+        padding: 1.5rem;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .iconWrapper {
         width: 48px;
         height: 48px;
-        margin-bottom: 0.75rem;
+        margin: 0 auto 0.75rem;
     }
 
     .icon {
@@ -134,5 +141,20 @@
 
     .card p {
         font-size: 0.9rem;
+        text-align: justify;
+        hyphens: auto;
+    }
+}
+
+@media (max-width: 320px) {
+
+    .card h3,
+    .header h2,
+    .header p {
+        text-align: center !important;
+    }
+
+    .card p {
+        text-align: justify !important;
     }
 }

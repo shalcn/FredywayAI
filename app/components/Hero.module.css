@@ -73,6 +73,12 @@
     color: var(--text-white-muted);
     margin-bottom: 3rem;
     line-height: 1.8;
+    text-align: center;
+    text-align-last: center;
+    max-width: 100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .eventInfo {
@@ -279,5 +285,17 @@
     .urgency {
         font-size: 0.9rem;
         padding: 0.25rem 0;
+    }
+}
+
+@media (max-width: 320px) {
+
+    .mainHeading,
+    .subHeading {
+        text-align: center !important;
+    }
+
+    .description {
+        text-align: justify !important;
     }
 }

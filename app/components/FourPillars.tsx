@@ -12,7 +12,7 @@ const pillars = [
         subtitle: 'Mengubah Informasi Berantakan Jadi Insight Tajam',
         points: [
             'Cara analisa laporan kualitatif dari puluhan supervisor dalam 5 menit',
-            'Menemukan pola keluhan pelanggan dari ratusan chat WhatsApp',
+            'Menemukan pola keluhan pelanggan dari ratusan chat WhatsApp',
             'Identifikasi tren kinerja tim tanpa harus baca satu per satu',
             'Template prompt siap pakai untuk berbagai jenis data'
         ],
@@ -23,8 +23,8 @@ const pillars = [
         title: 'PROBLEM SOLVING dengan AI',
         subtitle: 'Temukan Akar Masalah, Bukan Sekadar Gejala',
         points: [
-            'Teknik 5 Whys menggunakan AI untuk root cause analysis',
-            'Teknik fishbone menggunakan AI untuk menemukan klasifikasi penyebab masalah',
+            'Teknik 5 Whys menggunakan AI untuk root cause analysis',
+            'Teknik fishbone menggunakan AI untuk menemukan klasifikasi penyebab masalah',
             'Framework untuk mengatasi masalah berulang secara permanen'
         ],
         icon: <Search />
@@ -35,7 +35,7 @@ const pillars = [
         subtitle: 'Putuskan dengan Data, Bukan Perasaan',
         points: [
             'Matriks perbandingan objektif untuk memilih vendor, kandidat, berbagai keputusan atau opsi kebijakan hanya dalam hitungan menit saja',
-            'Identifikasi blind spot dan risiko tersembunyi dalam keputusan Anda',
+            'Identifikasi blind spot dan risiko tersembunyi dalam keputusan Anda',
             'Teknik Impact vs Effort untuk menentukan quick wins'
         ],
         icon: <Zap />

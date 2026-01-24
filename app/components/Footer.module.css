@@ -147,14 +147,44 @@
 @media (max-width: 768px) {
     .cta {
         padding: 4rem 1.5rem;
+        text-align: center;
     }
 
     .footerMain {
         padding: 3rem 1.5rem;
+        text-align: center;
+    }
+
+    .footerBrand {
+        align-items: center;
+        text-align: center;
+    }
+
+    .footerBrand p {
+        text-align: justify;
+    }
+
+    .footerContact h4,
+    .footerEvent h4 {
+        text-align: center;
+    }
+
+    .contactItem {
+        justify-content: center;
+    }
+
+    .eventDetail {
+        justify-content: center;
     }
 
     .footerGrid {
         grid-template-columns: 1fr;
         gap: 2rem;
+    }
+}
+
+@media (max-width: 320px) {
+    .footerBrand p {
+        text-align: justify !important;
     }
 }
