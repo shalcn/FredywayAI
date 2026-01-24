@@ -53,7 +53,6 @@ export default function CTASection() {
                             onClick={handleCTAClick}
                         >
                             Saya Siap Menjadi Leader Berbasis AI
-                            <ArrowRight className={styles.arrowIcon} />
                         </button>
                     </motion.div>
                 </motion.div>
