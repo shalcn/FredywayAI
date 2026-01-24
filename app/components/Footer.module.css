@@ -199,12 +199,12 @@
     }
 
     .footerBrand {
-        align-items: flex-start;
-        text-align: left;
+        align-items: center;
+        text-align: center;
     }
 
     .footerBrand p {
-        text-align: left;
+        text-align: center;
         font-size: 0.9rem;
         /* Smaller font to fit on one line */
         white-space: nowrap;
@@ -238,7 +238,7 @@
 
 @media (max-width: 320px) {
     .footerBrand p {
-        text-align: left !important;
+        text-align: center !important;
         white-space: normal;
         /* Allow wrap on tiny screens if absolutely necessary, or keep nowrap */
     }
