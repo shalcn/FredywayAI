@@ -197,11 +197,11 @@
 
 @media (max-width: 768px) {
     .section {
-        padding: 3rem 1.25rem;
+        padding: 2.5rem 1rem;
     }
 
     .header {
-        margin-bottom: 2.5rem;
+        margin-bottom: 2rem;
     }
 
     .header h2 {
@@ -224,7 +224,7 @@
     }
 
     .pillarCard {
-        padding: 2.5rem 1.5rem 1.5rem;
+        padding: 2rem 1.5rem;
         text-align: center;
         align-items: center;
     }
@@ -260,7 +260,7 @@
     }
 
     .bonus {
-        padding: 2rem 1.25rem;
+        padding: 1.5rem 1rem;
         text-align: center;
     }
 

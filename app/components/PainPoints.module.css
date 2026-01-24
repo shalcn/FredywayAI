@@ -98,11 +98,11 @@
 
 @media (max-width: 768px) {
     .section {
-        padding: 3rem 1.25rem;
+        padding: 2.5rem 1rem;
     }
 
     .header {
-        margin-bottom: 2rem;
+        margin-bottom: 1.5rem;
     }
 
     .header p {

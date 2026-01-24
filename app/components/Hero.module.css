@@ -214,7 +214,7 @@
 
 @media (max-width: 768px) {
     .hero {
-        padding: 6rem 1.5rem 4rem;
+        padding: 5rem 1rem 2rem;
         min-height: 100dvh;
         /* Full viewport height on mobile */
         display: flex;
@@ -235,8 +235,8 @@
 
     .description {
         font-size: 1rem;
-        line-height: 1.6;
-        margin-bottom: 2rem;
+        line-height: 1.5;
+        margin-bottom: 1.5rem;
         padding: 0 0.5rem;
     }
 

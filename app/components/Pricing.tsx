@@ -111,7 +111,7 @@ export default function Pricing() {
                     transition={{ duration: 0.8, delay: 0.6 }}
                 >
                     <h3>
-                        <CheckCircle2 size={28} style={{ display: 'inline', marginRight: '12px', verticalAlign: 'middle', color: 'var(--gold-main)' }} />
+
                         Yang Anda Dapatkan:
                     </h3>
                     <div className={styles.includesList}>
