@@ -11,11 +11,24 @@ import { onValue } from 'firebase/database';
 
 export default function Pricing() {
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [eventData, setEventData] = useState({
-        earlyBirdDate: '1 Februari 2026',
-        ebHeader: 'EARLY BIRD BERAKHIR 1 FEBRUARI 2026!',
-        ebNormalCard: 'Untuk pendaftaran setelah 1 Februari 2026',
-        ebEBCard: 'Bayar Sebelum 1 Februari 2026'
+    // Initialize state from localStorage if available, otherwise use defaults
+    const [eventData, setEventData] = useState(() => {
+        if (typeof window !== 'undefined') {
+            const cached = localStorage.getItem('pricingData');
+            if (cached) {
+                try {
+                    return JSON.parse(cached);
+                } catch (e) {
+                    console.error('Failed to parse cached pricing data:', e);
+                }
+            }
+        }
+        return {
+            earlyBirdDate: '1 Februari 2026',
+            ebHeader: 'EARLY BIRD BERAKHIR 1 FEBRUARI 2026!',
+            ebNormalCard: 'Untuk pendaftaran setelah 1 Februari 2026',
+            ebEBCard: 'Bayar Sebelum 1 Februari 2026'
+        };
     });
 
     const [ref, inView] = useInView({
@@ -28,12 +41,17 @@ export default function Pricing() {
         const unsubscribe = onValue(landingDataRef, (snapshot) => {
             if (snapshot.exists()) {
                 const data = snapshot.val();
-                setEventData({
+                const newPricingData = {
                     earlyBirdDate: data.earlyBirdDate || '1 Februari 2026',
                     ebHeader: data.ebHeader || 'EARLY BIRD BERAKHIR 1 FEBRUARI 2026!',
                     ebNormalCard: data.ebNormalCard || 'Untuk pendaftaran setelah 1 Februari 2026',
                     ebEBCard: data.ebEBCard || 'Bayar Sebelum 1 Februari 2026'
-                });
+                };
+                setEventData(newPricingData);
+                // Cache to localStorage
+                if (typeof window !== 'undefined') {
+                    localStorage.setItem('pricingData', JSON.stringify(newPricingData));
+                }
             }
         });
 

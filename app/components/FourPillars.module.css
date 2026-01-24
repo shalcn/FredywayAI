@@ -109,7 +109,7 @@
     line-height: 1.5;
     min-height: 3rem;
     text-align: center;
-    /* Align lines */
+    text-align-last: center;
 }
 
 .pointsList {
@@ -244,6 +244,7 @@
         min-height: auto;
         margin-bottom: 1rem;
         text-align: center;
+        text-align-last: center;
     }
 
     .pointsList li {

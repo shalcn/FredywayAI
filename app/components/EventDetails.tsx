@@ -9,11 +9,24 @@ import { landingDataRef } from '@/lib/firebase';
 import { onValue } from 'firebase/database';
 
 export default function EventDetails() {
-    const [eventData, setEventData] = useState({
-        date: '24 - 25 Februari 2026',
-        time: '09:00 - 16:00 WIB',
-        location: 'Hotel Grand Mercure, Kemayoran, Jakarta',
-        earlyBirdDate: '1 Februari 2026'
+    // Initialize state from localStorage if available, otherwise use defaults
+    const [eventData, setEventData] = useState(() => {
+        if (typeof window !== 'undefined') {
+            const cached = localStorage.getItem('eventData');
+            if (cached) {
+                try {
+                    return JSON.parse(cached);
+                } catch (e) {
+                    console.error('Failed to parse cached event data:', e);
+                }
+            }
+        }
+        return {
+            date: '24 - 25 Februari 2026',
+            time: '09:00 - 16:00 WIB',
+            location: 'Hotel Grand Mercure, Kemayoran, Jakarta',
+            earlyBirdDate: '1 Februari 2026'
+        };
     });
 
     useEffect(() => {
@@ -22,6 +35,10 @@ export default function EventDetails() {
             if (snapshot.exists()) {
                 const data = snapshot.val();
                 setEventData(data);
+                // Cache to localStorage
+                if (typeof window !== 'undefined') {
+                    localStorage.setItem('eventData', JSON.stringify(data));
+                }
             }
         }, (error) => {
             console.error('Failed to load event data via real-time listener', error);

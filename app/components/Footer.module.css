@@ -71,11 +71,14 @@
 
 .warningText {
     margin: 0;
-    text-align: left;
+    text-align: justify;
+    text-align-last: left;
     color: var(--accent-orange);
     font-size: 0.95rem;
     line-height: 1.6;
     word-spacing: normal;
+    hyphens: auto;
+    -webkit-hyphens: auto;
 }
 
 .footerMain {

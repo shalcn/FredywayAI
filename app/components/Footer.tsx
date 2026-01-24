@@ -7,11 +7,24 @@ import { landingDataRef } from '@/lib/firebase';
 import { onValue } from 'firebase/database';
 
 export default function Footer() {
-    const [eventData, setEventData] = useState({
-        date: '24 - 25 Februari 2026',
-        time: '09:00 - 16:00 WIB',
-        location: 'Hotel Grand Mercure, Kemayoran, Jakarta',
-        earlyBirdDate: '1 Februari 2026'
+    // Initialize state from localStorage if available, otherwise use defaults
+    const [eventData, setEventData] = useState(() => {
+        if (typeof window !== 'undefined') {
+            const cached = localStorage.getItem('eventData');
+            if (cached) {
+                try {
+                    return JSON.parse(cached);
+                } catch (e) {
+                    console.error('Failed to parse cached event data:', e);
+                }
+            }
+        }
+        return {
+            date: '24 - 25 Februari 2026',
+            time: '09:00 - 16:00 WIB',
+            location: 'Hotel Grand Mercure, Kemayoran, Jakarta',
+            earlyBirdDate: '1 Februari 2026'
+        };
     });
 
     useEffect(() => {
@@ -19,12 +32,17 @@ export default function Footer() {
         const unsubscribe = onValue(landingDataRef, (snapshot) => {
             if (snapshot.exists()) {
                 const data = snapshot.val();
-                setEventData({
+                const newEventData = {
                     date: data.date || '24 - 25 Februari 2026',
                     time: data.time || '09:00 - 16:00 WIB',
                     location: data.location || 'Hotel Grand Mercure, Kemayoran, Jakarta',
                     earlyBirdDate: data.earlyBirdDate || '1 Februari 2026'
-                });
+                };
+                setEventData(newEventData);
+                // Cache to localStorage
+                if (typeof window !== 'undefined') {
+                    localStorage.setItem('eventData', JSON.stringify(newEventData));
+                }
             }
         });
 
@@ -67,7 +85,7 @@ export default function Footer() {
                             <h4>Hubungi Kami</h4>
                             <div className={styles.contactItem}>
                                 <Phone size={20} />
-                                <span>WhatsApp: Kak Andersen (+62 877-7573-0572)</span>
+                                <span>WhatsApp: <a href="https://wa.me/6287775730572" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'underline' }}>Kak Andersen (+62 877-7573-0572)</a></span>
                             </div>
                             <div className={styles.contactItem}>
                                 <Mail size={20} />
