@@ -32,6 +32,11 @@
     margin-bottom: 3rem;
 }
 
+.ctaButton {
+    font-size: 1.25rem;
+    padding: 1.25rem 3rem;
+}
+
 .warning {
     margin-top: 3rem;
     background: rgba(245, 158, 11, 0.1);
@@ -41,9 +46,6 @@
     color: var(--accent-orange);
     font-size: 1.125rem;
     max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.8;
     margin-left: auto;
     margin-right: auto;
     line-height: 1.8;
@@ -75,9 +77,8 @@
     text-align-last: center;
     color: var(--accent-orange);
     font-size: 0.95rem;
-    line-height: 1.6;
-    word-spacing: -1px;
-    /* Tighter word spacing to fit better */
+    line-height: 1.8;
+    word-spacing: -0.5px;
 }
 
 .footerMain {
@@ -182,6 +183,14 @@
     .cta {
         padding: 4rem 1.5rem;
         text-align: center;
+    }
+
+    .ctaButton {
+        font-size: 0.9rem;
+        padding: 1rem 1.5rem;
+        white-space: nowrap;
+        width: 100%;
+        max-width: 340px;
     }
 
     .footerMain {

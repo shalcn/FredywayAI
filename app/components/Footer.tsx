@@ -55,10 +55,10 @@ export default function Footer() {
                 <div className="container">
                     <h2>Jangan Tunda Lagi.</h2>
                     <h3>Masa Depan Kepemimpinan Anda Dimulai Hari Ini.</h3>
-                    <button className="btn btn-primary" style={{ fontSize: '1.25rem', padding: '1.25rem 3rem' }} onClick={() => {
+                    <button className={`${styles.ctaButton} btn btn-primary`} onClick={() => {
                         document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' });
                     }}>
-                        Daftar Sekarang - Hemat Rp 1.5 Juta
+                        Daftar Sekarang - <span style={{ whiteSpace: 'nowrap' }}>Hemat Rp 1.5 Juta</span>
                     </button>
                     <div className={styles.warning}>
                         <div className={styles.warningHeader}>
@@ -66,7 +66,7 @@ export default function Footer() {
                             <strong>PERHATIAN:</strong>
                         </div>
                         <p className={styles.warningText}>
-                            Kuota terbatas hanya untuk 30 peserta karena kami ingin memastikan setiap peserta mendapat perhatian maksimal dan bisa praktik langsung. Early Bird berakhir {eventData.earlyBirdDate}. Setelah itu harga naik Rp 1.5 Juta.
+                            Kuota terbatas hanya untuk 30 peserta karena kami ingin memastikan setiap peserta mendapat perhatian maksimal dan bisa praktik langsung. Early Bird berakhir {eventData.earlyBirdDate}. Setelah itu harga naik <span style={{ whiteSpace: 'nowrap' }}>Rp 1.5 Juta.</span>
                         </p>
                     </div>
                 </div>
