@@ -44,6 +44,44 @@
     margin-left: auto;
     margin-right: auto;
     line-height: 1.8;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.8;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.warningHeader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 1.25rem;
+    color: var(--accent-orange);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.warningHeader svg {
+    flex-shrink: 0;
+}
+
+.warningText {
+    margin: 0;
+    text-align: justify !important;
+    color: var(--accent-orange);
+    font-size: 0.95rem;
+    /* Slightly smaller */
+    line-height: 1.35;
+    /* Tighter spacing like reference */
+    /* Spasi normal 1.5 */
+    hyphens: auto;
+    /* Reduces gaps in justified text */
+    -webkit-hyphens: auto;
+    word-spacing: normal;
 }
 
 .footerMain {
@@ -156,25 +194,35 @@
     }
 
     .footerBrand {
-        align-items: center;
-        text-align: center;
+        align-items: flex-start;
+        text-align: left;
     }
 
     .footerBrand p {
-        text-align: justify;
+        text-align: left;
+        font-size: 0.9rem;
+        /* Smaller font to fit on one line */
+        white-space: nowrap;
+        /* Force one line as requested */
+        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        /* Graceful degradation if screen is too narrow */
     }
 
     .footerContact h4,
     .footerEvent h4 {
-        text-align: center;
+        text-align: left;
     }
 
     .contactItem {
-        justify-content: center;
+        justify-content: flex-start;
+        text-align: left;
     }
 
     .eventDetail {
-        justify-content: center;
+        justify-content: flex-start;
+        text-align: left;
     }
 
     .footerGrid {
@@ -185,6 +233,8 @@
 
 @media (max-width: 320px) {
     .footerBrand p {
-        text-align: justify !important;
+        text-align: left !important;
+        white-space: normal;
+        /* Allow wrap on tiny screens if absolutely necessary, or keep nowrap */
     }
 }

@@ -42,10 +42,16 @@ export default function Footer() {
                     }}>
                         Daftar Sekarang - Hemat Rp 1.5 Juta
                     </button>
-                    <p className={styles.warning}>
-                        <AlertTriangle size={20} style={{ display: 'inline', marginRight: '8px', verticalAlign: 'text-bottom' }} /> <strong>PERHATIAN:</strong> Kuota terbatas hanya untuk 30 peserta karena kami ingin memastikan setiap peserta mendapat perhatian maksimal dan bisa praktik langsung.
-                        <br />Early Bird berakhir {eventData.earlyBirdDate}. Setelah itu harga naik Rp 1.5 Juta.
-                    </p>
+                    <div className={styles.warning}>
+                        <div className={styles.warningHeader}>
+                            <AlertTriangle size={24} />
+                            <strong>PERHATIAN:</strong>
+                        </div>
+                        <p className={styles.warningText}>
+                            Kuota terbatas hanya untuk 30 peserta karena kami ingin memastikan setiap peserta mendapat perhatian maksimal dan bisa praktik langsung.
+                            <br />Early Bird berakhir {eventData.earlyBirdDate}. Setelah itu harga naik Rp 1.5 Juta.
+                        </p>
+                    </div>
                 </div>
             </div>
 
