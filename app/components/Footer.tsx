@@ -85,7 +85,7 @@ export default function Footer() {
                             <h4>Hubungi Kami</h4>
                             <div className={styles.contactItem}>
                                 <Phone size={20} />
-                                <span>WhatsApp: <a href="https://wa.me/6287775730572" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'underline' }}>Kak Andersen (+62 877-7573-0572)</a></span>
+                                <span>WhatsApp: Kak Andersen (<a href="https://wa.me/6287775730572" target="_blank" rel="noopener noreferrer" style={{ color: '#3182ce', textDecoration: 'underline' }}>+62 877-7573-0572</a>)</span>
                             </div>
                             <div className={styles.contactItem}>
                                 <Mail size={20} />
