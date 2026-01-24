@@ -72,7 +72,7 @@
 .warningText {
     margin: 0;
     text-align: justify;
-    text-align-last: left;
+    text-justify: inter-word;
     color: var(--accent-orange);
     font-size: 0.95rem;
     line-height: 1.6;
