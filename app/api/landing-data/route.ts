@@ -11,7 +11,8 @@ const defaultData = {
     ebHeader: "EARLY BIRD BERAKHIR 1 FEBRUARI 2026!",
     ebNormalCard: "Untuk pendaftaran setelah 1 Februari 2026",
     ebEBCard: "Bayar Sebelum 1 Februari 2026",
-    waNumber: "6287775730572"
+    waNumber: "6287775730572",
+    waBubbleNumber: "6287775730572"
 };
 
 // GET: Read data from Firebase

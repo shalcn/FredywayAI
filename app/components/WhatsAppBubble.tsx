@@ -19,8 +19,8 @@ export default function WhatsAppBubble() {
         const unsubscribe = onValue(landingDataRef, (snapshot) => {
             if (snapshot.exists()) {
                 const data = snapshot.val();
-                if (data.waNumber) {
-                    setWaNumber(data.waNumber);
+                if (data.waBubbleNumber) {
+                    setWaNumber(data.waBubbleNumber);
                 }
             }
         });

@@ -17,7 +17,8 @@ export default function AdminPage() {
         ebHeader: '',
         ebNormalCard: '',
         ebEBCard: '',
-        waNumber: ''
+        waNumber: '',
+        waBubbleNumber: ''
     });
     const [isLoading, setIsLoading] = useState(true);
     const [isSaving, setIsSaving] = useState(false);
@@ -44,7 +45,8 @@ export default function AdminPage() {
                     ebHeader: data.ebHeader || 'EARLY BIRD BERAKHIR 1 FEBRUARI 2026!',
                     ebNormalCard: data.ebNormalCard || 'Untuk pendaftaran setelah 1 Februari 2026',
                     ebEBCard: data.ebEBCard || 'Bayar Sebelum 1 Februari 2026',
-                    waNumber: data.waNumber || '6287775730572'
+                    waNumber: data.waNumber || '6287775730572',
+                    waBubbleNumber: data.waBubbleNumber || '6287775730572'
                 });
                 setIsLoading(false);
             })
@@ -252,6 +254,21 @@ export default function AdminPage() {
                                     type="text"
                                     value={formData.waNumber}
                                     onChange={e => setFormData({ ...formData, waNumber: e.target.value })}
+                                    className={styles.input}
+                                    placeholder="Contoh: 6287775730572"
+                                />
+                            </div>
+
+                            <div className={styles.formGroup}>
+                                <label className={styles.label}>Nomor WhatsApp Floating Bubble (Tanpa +)</label>
+                                <div className={styles.previewContainer}>
+                                    <p className={styles.previewLabel}>Preview Tampilan di Landing Page:</p>
+                                    <img src="/images/wa_bubble_preview.png" alt="WhatsApp Bubble Preview" className={styles.previewImage} />
+                                </div>
+                                <input
+                                    type="text"
+                                    value={formData.waBubbleNumber}
+                                    onChange={e => setFormData({ ...formData, waBubbleNumber: e.target.value })}
                                     className={styles.input}
                                     placeholder="Contoh: 6287775730572"
                                 />
