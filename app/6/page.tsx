@@ -180,21 +180,12 @@ export default function AdminPage() {
                 <div className={styles.header}>
                     <h1 className={styles.title}>Admin Dashboard</h1>
                     <p className={styles.subtitle}>Kelola informasi event landing page</p>
-                    <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', marginTop: '1.5rem' }}>
+                    <div className={styles.headerActions}>
                         {!showSettings && (
                             <>
-                                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                                    <div style={{
-                                        fontSize: '0.75rem',
-                                        color: 'rgba(255,255,255,0.8)',
-                                        background: 'rgba(255,255,255,0.05)',
-                                        padding: '0.25rem 0.75rem',
-                                        borderRadius: '4px',
-                                        border: '1px solid rgba(255,255,255,0.1)',
-                                        textAlign: 'right',
-                                        lineHeight: '1.2'
-                                    }}>
-                                        <span style={{ display: 'block', fontSize: '0.65rem', opacity: 0.7, marginBottom: '2px' }}>Default Credential:</span>
+                                <div className={styles.credentialWrapper}>
+                                    <div className={styles.credentialBox}>
+                                        <span className={styles.credentialLabel}>Default Credential:</span>
                                         <strong>admin / admin123</strong>
                                     </div>
                                     <button
