@@ -136,7 +136,7 @@ export default function Footer() {
             </div>
 
             <div className={styles.copyright}>
-                <p>© 2026 Freddway Coaching & Consulting. All Rights Reserved. | <a href="https://visba.id" target="_blank" style={{ color: '#1ecbe1', textDecoration: 'none' }}>Visba Digital Agency</a></p>
+                <p>© 2026 Freddway Coaching & Consulting. All Rights Reserved.</p>
             </div>
         </footer>
     );
