@@ -108,7 +108,7 @@
 				<p>You can find more information about XML sitemaps on <a href="https://sitemaps.org">sitemaps.org</a>.</p>
 				
 				<div class="info-box">
-					This XML Sitemap Index file contains <strong><xsl:value-of select="count(sitemap:sitemapindex/sitemap:sitemap)"/></strong> sitemaps.
+					This XML Sitemap Index file contains <strong><xsl:value-of select="count(//*[local-name()='sitemap'])"/></strong> sitemaps.
 				</div>
 
 				<table>
@@ -119,19 +119,19 @@
 						</tr>
 					</thead>
 					<tbody>
-						<xsl:for-each select="sitemap:sitemapindex/sitemap:sitemap">
+						<xsl:for-each select="//*[local-name()='sitemap']">
 							<tr>
 								<td>
 									<a class="sitemap-link">
 										<xsl:attribute name="href">
-											<xsl:value-of select="sitemap:loc"/>
+											<xsl:value-of select="*[local-name()='loc']"/>
 										</xsl:attribute>
 										<span class="icon">S</span>
-										<xsl:value-of select="sitemap:loc"/>
+										<xsl:value-of select="*[local-name()='loc']"/>
 									</a>
 								</td>
 								<td>
-									<xsl:value-of select="sitemap:lastmod"/>
+									<xsl:value-of select="*[local-name()='lastmod']"/>
 								</td>
 							</tr>
 						</xsl:for-each>
