@@ -99,7 +99,7 @@ export default function Footer() {
                             </div>
                             <div className={styles.contactItem}>
                                 <Mail size={20} />
-                                <span>Email: Masukkan Email Anda</span>
+                                <span>Email: sensenadiwanata@gmail.com</span>
                             </div>
                             <div className={styles.contactItem}>
                                 <Globe size={20} />
