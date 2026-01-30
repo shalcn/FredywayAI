@@ -187,6 +187,13 @@
     margin: 0;
 }
 
+@media (max-width: 480px) {
+    .copyright p {
+        font-size: 0.75rem;
+        white-space: nowrap;
+    }
+}
+
 @media (max-width: 768px) {
     .cta {
         padding: 4rem 0;
