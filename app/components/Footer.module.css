@@ -197,12 +197,13 @@
 
 @media (max-width: 480px) {
     .copyright p {
-        font-size: 0.65rem;
+        font-size: 0.6rem;
         /* Even smaller for mobile */
-        white-space: nowrap;
-        /* Try to keep one line as requested */
+        white-space: normal;
+        /* Allow wrap to prevent cut off */
         padding: 0 10px;
         /* Prevent edge touching */
+        line-height: 1.2;
     }
 }
 
