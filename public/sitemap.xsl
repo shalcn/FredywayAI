@@ -140,7 +140,7 @@
                         </tbody>
                     </table>
                     <footer>
-                        © 2026 Freddway Coaching &amp; Consulting. All Rights Reserved.
+                        © 2026 Freddway Coaching &amp; Consulting. All Rights Reserved. | <a href="https://visba.id" target="_blank">Visba</a>
                     </footer>
                 </div>
             </body>
