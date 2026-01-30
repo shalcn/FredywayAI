@@ -24,7 +24,7 @@ const painPoints = [
     {
         icon: <ClipboardList className={styles.icon} />,
         title: 'Rencana Strategis Hanya di Kertas',
-        description: 'Sudah bikin strategic plan bagus di awal tahun. Tapi pas mau eksekusi, bingung mulai dari mana. Tidak ada langkah-langkah konkret yang jelas. Akhirnya jalan di tempat.'
+        description: 'Sudah bikin strategic plan bagus di awal tahun. Tapi\npas mau eksekusi, bingung mulai dari mana. Tidak ada\nlangkah-langkah konkret yang jelas.\nAkhirnya jalan di tempat.'
     },
     {
         icon: <Clock className={styles.icon} />,
