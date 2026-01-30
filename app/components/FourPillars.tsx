@@ -104,10 +104,18 @@ export default function FourPillars() {
                 >
                     <div className={styles.bonusTag}>
                         BONUS
-                    </div>                    <h3>Talent Analytics with AI</h3>
-                    <p>
-                        <CheckCircle2 size={20} style={{ display: 'inline', marginRight: '8px', verticalAlign: 'text-bottom', color: 'var(--gold-main)' }} /> AI Personality Profiler (DISC) – menganalisa potensi, kelemahan, dark side dan kecocokan jabatan sesuai personaliti karyawan dengan memakai AI
-                    </p>
+                    </div>
+                    <h3>Talent Analytics with AI</h3>
+                    <div className={styles.bonusContent}>
+                        <p>
+                            <CheckCircle2 size={20} className={styles.bonusIcon} />
+                            <strong>Employee Psychological Capital Scale (PsyCap)</strong> – mengukur tingkat hope, efficacy, resilience, dan optimism karyawan untuk memetakan daya juang, ketahanan mental, dan kesiapan menghadapi tekanan kerja.
+                        </p>
+                        <p>
+                            <CheckCircle2 size={20} className={styles.bonusIcon} />
+                            <strong>Workplace Communication Skills Scale (WCSS)</strong> – menilai kualitas komunikasi kerja karyawan (kejelasan pesan, active listening, asertivitas, dan kolaborasi) untuk mengidentifikasi gap komunikasi yang memicu miskom dan konflik.
+                        </p>
+                    </div>
                 </motion.div>
             </div>
         </section>

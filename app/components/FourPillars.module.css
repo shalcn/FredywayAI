@@ -191,8 +191,21 @@
     max-width: 900px;
     margin: 0 auto;
     line-height: 1.8;
-    text-align: center;
-    text-align-last: center;
+}
+
+.bonusContent {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.bonusIcon {
+    display: inline;
+    margin-right: 12px;
+    vertical-align: middle;
+    color: var(--gold-main);
+    flex-shrink: 0;
 }
 
 @media (max-width: 768px) {
@@ -280,7 +293,7 @@
     .bonus p {
         font-size: 0.95rem;
         line-height: 1.6;
-        text-align: justify;
+        text-align: left;
     }
 }
 
