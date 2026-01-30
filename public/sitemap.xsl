@@ -2,81 +2,105 @@
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:s="http://www.sitemaps.org/schemas/sitemap/0.9">
     <xsl:output method="html" encoding="UTF-8" indent="yes" />
     <xsl:template match="/">
-        <html>
+        <html xmlns="http://www.w3.org/1999/xhtml">
             <head>
                 <title>XML Sitemap Index</title>
                 <style type="text/css">
                     body {
                         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-                        color: #0d122b;
-                        background: #fff;
+                        color: #1a1a2e;
+                        background: #f8f9fa;
                         margin: 0;
                         padding: 40px 20px;
                     }
                     .container {
-                        max-width: 800px;
+                        max-width: 1000px;
                         margin: 0 auto;
                     }
                     h1 {
                         font-size: 32px;
+                        font-weight: 700;
+                        color: #1a1a2e;
                         margin-bottom: 20px;
-                        color: #0d122b;
+                        margin-top: 0;
                     }
                     p {
                         font-size: 14px;
                         color: #666;
-                        margin-bottom: 10px;
+                        line-height: 1.6;
+                        margin: 0 0 12px 0;
                     }
                     a {
-                        color: #00bcd4;
+                        color: #1ecbe1;
                         text-decoration: none;
                     }
+                    a:hover {
+                        text-decoration: underline;
+                    }
                     .info-box {
-                        background: #f0fbff;
-                        border-left: 4px solid #00bcd4;
-                        padding: 15px 20px;
-                        margin: 20px 0;
+                        background: #fff;
+                        border-left: 4px solid #1ecbe1;
+                        padding: 24px;
+                        margin: 30px 0;
                         border-radius: 4px;
                         font-size: 14px;
+                        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+                        color: #1a1a2e;
                     }
                     table {
                         width: 100%;
-                        border-collapse: collapse;
+                        border-collapse: separate;
+                        border-spacing: 0;
                         margin-top: 20px;
-                        border: 1px solid #f0f0f0;
+                        background: #fff;
+                        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+                        border-radius: 8px;
+                        overflow: hidden;
                     }
                     th {
-                        background: #0d122b;
+                        background: linear-gradient(135deg, #1a1a2e 0%, #0f0f1a 100%);
                         color: #fff;
-                        padding: 12px 15px;
+                        padding: 16px 24px;
                         text-align: left;
-                        font-size: 13px;
+                        font-size: 14px;
+                        font-weight: 600;
                     }
                     td {
-                        padding: 12px 15px;
-                        border-bottom: 1px solid #f0f0f0;
-                        font-size: 13px;
+                        padding: 16px 24px;
+                        border-top: 1px solid #f0f0f0;
+                        font-size: 14px;
+                        color: #1a1a2e;
+                        vertical-align: middle;
                     }
                     tr:hover td {
-                        background: #f9f9f9;
+                        background: #fdfdfd;
                     }
                     .icon {
-                        display: inline-block;
-                        width: 16px;
-                        height: 16px;
-                        background: #00bcd4;
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 20px;
+                        height: 20px;
+                        background: #1ecbe1;
                         color: white;
-                        text-align: center;
-                        line-height: 16px;
                         border-radius: 3px;
-                        margin-right: 8px;
-                        font-size: 10px;
+                        margin-right: 12px;
+                        font-size: 12px;
+                        font-weight: 700;
+                        flex-shrink: 0;
+                    }
+                    .sitemap-link {
+                        display: flex;
+                        align-items: center;
                     }
                     footer {
                         margin-top: 40px;
                         text-align: center;
-                        font-size: 12px;
-                        color: #999;
+                        font-size: 13px;
+                        color: #666;
+                    }
+                    strong {
+                        font-weight: 700;
                     }
                 </style>
             </head>
@@ -93,18 +117,20 @@
                     <table>
                         <thead>
                             <tr>
-                                <th>Sitemap</th>
-                                <th>Last Modified</th>
+                                <th width="75%">Sitemap</th>
+                                <th width="25%">Last Modified</th>
                             </tr>
                         </thead>
                         <tbody>
                             <xsl:for-each select="//*[local-name()='sitemap']">
                                 <tr>
                                     <td>
-                                        <a href="{*[local-name()='loc']}">
+                                        <div class="sitemap-link">
                                             <span class="icon">S</span>
-                                            <xsl:value-of select="*[local-name()='loc']" />
-                                        </a>
+                                            <a href="{*[local-name()='loc']}">
+                                                <xsl:value-of select="*[local-name()='loc']" />
+                                            </a>
+                                        </div>
                                     </td>
                                     <td>
                                         <xsl:value-of select="*[local-name()='lastmod']" />
