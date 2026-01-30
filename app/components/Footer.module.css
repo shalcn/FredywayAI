@@ -197,13 +197,15 @@
 
 @media (max-width: 480px) {
     .copyright p {
-        font-size: 0.6rem;
-        /* Even smaller for mobile */
-        white-space: normal;
-        /* Allow wrap to prevent cut off */
+        font-size: 0.6rem !important;
+        white-space: normal !important;
+        /* Allow wrap */
         padding: 0 10px;
-        /* Prevent edge touching */
-        line-height: 1.2;
+        line-height: 1.2 !important;
+        width: 100% !important;
+        max-width: 350px;
+        /* Constrain width */
+        margin: 0 auto;
     }
 }
 
