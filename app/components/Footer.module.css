@@ -175,10 +175,14 @@
 }
 
 .copyright {
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 2rem;
     background: var(--bg-primary);
     border-top: 2px solid var(--navy-main);
+    text-align: center;
+    width: 100%;
 }
 
 .copyright p {
