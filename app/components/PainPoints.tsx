@@ -34,7 +34,7 @@ const painPoints = [
     {
         icon: <Brain className={styles.icon} />,
         title: 'Merasa Ketinggalan Zaman AI',
-        description: 'Semua orang bicara AI. Tapi Anda tidak tahu harus mulai dari mana. Takut kelihatan gaptek, tapi juga bingung bagaimana AI bisa benar-benar membantu pekerjaan\nexecutive sehari-hari.'
+        description: 'Semua orang bicara AI. Tapi Anda tidak tahu\nharus mulai dari mana. Takut kelihatan\ngaptek, tapi juga bingung bagaimana AI bisa\nbenar-benar membantu pekerjaan\nexecutive sehari-hari.'
     }
 ];
 
