@@ -8,6 +8,7 @@ const galleryImages = [
     '/images/uploaded_image_0_1768389085172.jpg',
     '/images/uploaded_image_1_1768389085172.jpg',
     '/images/uploaded_image_2_1768389085172.jpg',
+    '/images/uploaded_image_group_2026.jpg',
     '/images/uploaded_image_3_1768389085172.jpg',
     '/images/uploaded_image_4_1768389085172.jpg'
 ];

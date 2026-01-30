@@ -37,7 +37,7 @@ export default function Hero() {
                     >
                         <span className={styles.rocketWrapper}>
                             <Rocket className={styles.rocketIconInner} />
-                        </span> AI Tidak Akan Menggantikan Anda
+                        </span> Leader Tanpa AI Akan Tertinggal
                     </motion.h1>
 
                     <motion.h2
@@ -46,7 +46,7 @@ export default function Hero() {
                         animate={inView ? { opacity: 1, y: 0 } : {}}
                         transition={{ duration: 0.8, delay: 0.4 }}
                     >
-                        Namun, Leader yang <span className="gradient-text">Menguasai AI</span> akan Menggantikan Mereka yang <span style={{ color: '#FFD700' }}>Enggan Beradaptasi</span>.
+                        4 Skill Kritis yang Sekarang Bisa Diselesaikan <span className="gradient-text">10x Lebih Cepat</span>
                     </motion.h2>
 
                     <motion.p
