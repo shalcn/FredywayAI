@@ -114,7 +114,7 @@
                         </tbody>
                     </table>
                     <footer>
-                        © 2026 Freddway Coaching & Consulting. All Rights Reserved.
+                        © 2026 Freddway Coaching &amp; Consulting. All Rights Reserved.
                     </footer>
                 </div>
             </body>
