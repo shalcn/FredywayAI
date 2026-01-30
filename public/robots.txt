@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://visba-1.vercel.app/sitemap.xml
+Sitemap: https://freddwayai.id/sitemap.xml

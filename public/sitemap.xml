@@ -2,11 +2,11 @@
 <?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<sitemap>
-		<loc>https://fredyway-ai.vercel.app/page-sitemap.xml</loc>
+		<loc>https://freddwayai.id/page-sitemap.xml</loc>
 		<lastmod>2026-01-30T15:08:10+07:00</lastmod>
 	</sitemap>
 	<sitemap>
-		<loc>https://fredyway-ai.vercel.app/post-sitemap.xml</loc>
+		<loc>https://freddwayai.id/post-sitemap.xml</loc>
 		<lastmod>2026-01-30T15:08:10+07:00</lastmod>
 	</sitemap>
 </sitemapindex>
