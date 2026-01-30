@@ -197,7 +197,7 @@
 
 @media (max-width: 480px) {
     .copyright p {
-        font-size: 0.6rem !important;
+        font-size: 0.75rem !important;
         white-space: normal !important;
         /* Allow wrap */
         padding: 0 10px;
