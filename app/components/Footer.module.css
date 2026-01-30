@@ -185,12 +185,19 @@
     color: var(--text-muted);
     font-size: 0.875rem;
     margin: 0;
+    text-align: center;
+    /* Enforce centering */
+    width: 100%;
 }
 
 @media (max-width: 480px) {
     .copyright p {
-        font-size: 0.75rem;
+        font-size: 0.65rem;
+        /* Even smaller for mobile */
         white-space: nowrap;
+        /* Try to keep one line as requested */
+        padding: 0 10px;
+        /* Prevent edge touching */
     }
 }
 
