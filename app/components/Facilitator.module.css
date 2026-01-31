@@ -44,7 +44,8 @@
 .imageBadge {
     position: absolute;
     bottom: -140px;
-    right: -40px;
+    left: 50%;
+    transform: translateX(-50%);
     width: 320px;
     height: auto;
     z-index: 2;
@@ -211,8 +212,7 @@
     }
 
     .imageBadge {
-        right: 50%;
-        transform: translateX(50%);
+        /* Already centered by default styles */
         bottom: -80px;
         width: 240px;
     }
