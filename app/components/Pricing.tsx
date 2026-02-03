@@ -24,10 +24,10 @@ export default function Pricing() {
             }
         }
         return {
-            earlyBirdDate: '1 Februari 2026',
-            ebHeader: 'EARLY BIRD BERAKHIR 1 FEBRUARI 2026!',
-            ebNormalCard: 'Untuk pendaftaran setelah 1 Februari 2026',
-            ebEBCard: 'Bayar Sebelum 1 Februari 2026'
+            earlyBirdDate: '10 Februari 2026',
+            ebHeader: 'EARLY BIRD BERAKHIR 10 FEBRUARI 2026!',
+            ebNormalCard: 'Untuk pendaftaran setelah 10 Februari 2026',
+            ebEBCard: 'Bayar Sebelum 10 Februari 2026'
         };
     });
 

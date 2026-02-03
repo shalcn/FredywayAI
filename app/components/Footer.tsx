@@ -20,10 +20,10 @@ export default function Footer() {
             }
         }
         return {
-            date: '24 - 25 Februari 2026',
+            date: '25 - 26 Februari 2026',
             time: '09:00 - 16:00 WIB',
             location: 'Hotel Grand Mercure, Kemayoran, Jakarta',
-            earlyBirdDate: '1 Februari 2026'
+            earlyBirdDate: '10 Februari 2026'
         };
     });
 
@@ -33,10 +33,10 @@ export default function Footer() {
             if (snapshot.exists()) {
                 const data = snapshot.val();
                 const newEventData = {
-                    date: data.date || '24 - 25 Februari 2026',
+                    date: data.date || '25 - 26 Februari 2026',
                     time: data.time || '09:00 - 16:00 WIB',
                     location: data.location || 'Hotel Grand Mercure, Kemayoran, Jakarta',
-                    earlyBirdDate: data.earlyBirdDate || '1 Februari 2026',
+                    earlyBirdDate: data.earlyBirdDate || '10 Februari 2026',
                     waNumber: data.waNumber || '6287775730572'
                 };
                 setEventData(newEventData);

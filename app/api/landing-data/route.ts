@@ -4,13 +4,13 @@ import { get, set } from 'firebase/database';
 
 // Default data
 const defaultData = {
-    date: "24 - 25 Februari 2026",
+    date: "25 - 26 Februari 2026",
     time: "09:00 - 16:00 WIB",
     location: "Hotel Grand Mercure, Kemayoran, Jakarta",
-    earlyBirdDate: "1 Februari 2026",
-    ebHeader: "EARLY BIRD BERAKHIR 1 FEBRUARI 2026!",
-    ebNormalCard: "Untuk pendaftaran setelah 1 Februari 2026",
-    ebEBCard: "Bayar Sebelum 1 Februari 2026",
+    earlyBirdDate: "10 Februari 2026",
+    ebHeader: "EARLY BIRD BERAKHIR 10 FEBRUARI 2026!",
+    ebNormalCard: "Untuk pendaftaran setelah 10 Februari 2026",
+    ebEBCard: "Bayar Sebelum 10 Februari 2026",
     waNumber: "6287775730572",
     waBubbleNumber: "6287775730572"
 };

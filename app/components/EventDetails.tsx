@@ -22,10 +22,10 @@ export default function EventDetails() {
             }
         }
         return {
-            date: '24 - 25 Februari 2026',
+            date: '25 - 26 Februari 2026',
             time: '09:00 - 16:00 WIB',
             location: 'Hotel Grand Mercure, Kemayoran, Jakarta',
-            earlyBirdDate: '1 Februari 2026'
+            earlyBirdDate: '10 Februari 2026'
         };
     });
 
