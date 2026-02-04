@@ -99,7 +99,7 @@ export default function Footer() {
                             </div>
                             <div className={styles.contactItem}>
                                 <Mail size={20} />
-                                <span>Email: <a href="mailto:sensenadiwinata@gmail.com" style={{ color: '#3182ce', textDecoration: 'underline' }}>sensenadiwanata@gmail.com</a></span>
+                                <span>Email: <a href="mailto:sensenadiwinata@gmail.com" style={{ color: '#3182ce', textDecoration: 'underline' }}>sensenadiwinata@gmail.com</a></span>
                             </div>
                             <div className={styles.contactItem}>
                                 <Globe size={20} />

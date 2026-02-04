@@ -22,6 +22,9 @@ export default function Gallery() {
     return (
         <section className={styles.section} ref={ref}>
             <div className="container">
+                <div className={styles.header}>
+                    <h2>Framework Leadership Baru dari Kami</h2>
+                </div>
 
 
                 <div className={styles.grid}>

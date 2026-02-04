@@ -23,7 +23,7 @@ const pillars = [
         title: 'PROBLEM SOLVING dengan AI',
         subtitle: 'Temukan Akar Masalah, Bukan Sekadar Gejala',
         points: [
-            'Teknik 5 Whys menggunakan AI untuk root cause analysis',
+            'Teknik 5 Why\'s menggunakan AI untuk root cause analysis',
             'Teknik fishbone menggunakan AI untuk menemukan klasifikasi penyebab masalah',
             'Framework untuk mengatasi masalah berulang secara permanen'
         ],
